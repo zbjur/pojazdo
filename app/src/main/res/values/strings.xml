@@ -1,4 +1,18 @@
 <resources>
-    <string name="app_name">Clean Architecture Sample</string>
+    <string name="app_name">Mirek Handlarz</string>
     <string name="request_new_location">Request new location</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_search">Szukaj</string>
+    <string name="title_info">Info</string>
+    <string name="title_history">Historia</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_vehicle_summary">VehicleSummary</string>
+    <string name="title_activity_summary">SummaryActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

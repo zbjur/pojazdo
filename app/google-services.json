@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "55101927785",
+    "firebase_url": "https://mirek-3b183.firebaseio.com",
+    "project_id": "mirek-3b183",
+    "storage_bucket": "mirek-3b183.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55101927785:android:5525252b614f2f24",
+        "android_client_info": {
+          "package_name": "com.mirek.architecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55101927785-jvtkrubvmc7tpjoukeuh3cil9lfbbbt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyZCoAsC-r-TP-8FdvxspnskxQYm3S1Vc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
