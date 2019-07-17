@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mirek.architecture">
+    package="com.pojazdo.architecture">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -10,15 +10,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".ui.MirekApplication"
+        android:name="com.pojazdo.architecture.ui.PojazdoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+
         android:hardwareAccelerated="true">
-        <activity android:name=".ui.main.HomeActivity">
+        <activity android:name="com.pojazdo.architecture.ui.main.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,11 +27,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.history.HistoryDetailsActivity"
+            android:name="com.pojazdo.architecture.ui.history.HistoryDetailsActivity"
             android:label="@string/title_activity_history"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.summary.VehicleSummaryActivity"
+            android:name="com.pojazdo.architecture.ui.summary.VehicleSummaryActivity"
             android:label="@string/title_activity_vehicle_summary"
             android:theme="@style/AppTheme" />
     </application>

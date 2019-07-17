@@ -1,0 +1,68 @@
+{
+  "brand": "Skoda",
+  "model": "Roomster",
+  "yearOfProduction": "2011",
+  "vin": "TMBNC25J7C7016783",
+  "engineCapacity": "1,4",
+  "insurance": "aktualna",
+  "technicalExamination": "aktualne",
+  "lastMeterState": "145 294 km ",
+  "registrationState": "zarejestrowany",
+  "capacity": "1,4",
+  "fuel": "beznyzna",
+  "alternativeFuel": "gaz",
+
+  "technicalData": {
+    "engineCapacity" :"1,4",
+    "enginePower":"64 kW",
+    "fuelType":"benzyna bezołowiowa",
+    "coEmEmission":"210 g/km",
+    "averageFuelCnsumption": "9 l"
+
+  },
+  "documents": {
+
+  },
+
+  "timeLine": [{
+    "key": "Całokształt",
+    "value": "3,90",
+    "timeLine": [
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      },
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      },
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      },
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      }
+    ]},
+    {
+      "key": "Całokształt",
+      "value": "3,90",
+      "timeLine": [
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        },
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        },
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        },
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        }
+      ]}]}

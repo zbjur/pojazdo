@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    buildToolsVersion appConfig.buildToolsVersion
+    compileSdkVersion appConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion appConfig.minSdkVersion
+        targetSdkVersion appConfig.targetSdkVersion
+        versionCode appConfig.versionCode
+        versionName appConfig.versionName
+        testInstrumentationRunner appConfig.testInstrumentationRunner
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api testDependencies.junit
+
+
+    api appDependencies.kotlinReflect
+    api testDependencies.mockito
+    api(testDependencies.mockitoKotlin) {
+        exclude group: "org.jetbrains.kotlin"
+    }
+    api testDependencies.assertJ
+    api testDependencies.mockwebserver
+    api testDependencies.jsonAssert
+}

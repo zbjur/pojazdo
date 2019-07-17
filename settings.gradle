@@ -1,1 +1,1 @@
-include ':app', ':usecases', ':domain', ':base', ':api', ':apii'
+include ':app', ':base', ':testcommons', ':api', ':usecases', ':expandablerecyclerview'

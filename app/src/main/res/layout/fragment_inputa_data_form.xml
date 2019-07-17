@@ -14,7 +14,6 @@
         android:layout_marginTop="99dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="numer rejestracyjny"
         android:textSize="24sp"
         android:tooltipText="Knknknk" />
 
@@ -28,7 +27,6 @@
         android:layout_marginTop="174dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="numer vin"
         android:textSize="24sp" />
 
 
@@ -41,7 +39,6 @@
         android:layout_marginTop="241dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="pierwsza data rejestracji"
         android:textSize="24sp" />
 
     <Button
