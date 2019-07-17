@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
+    <title>
+    </title>
+    <link rel="stylesheet" href="../common/CardioSecur_iPhone.css"/>
+    <style>
+      /* App custom styles */
+
+    </style>
+</head>
+<body>
+<noscript>
+    <div class="technical-information"><p>Włącz obsługę JavaScript. Przy wyłączonej obsłudze
+        JavaScript niektóre informacje na stronie mogą wyświetlać się niepoprawnie.</p></div>
+</noscript>
+<div class="technical-information cookies-disabled"><p>Twoja przeglądarka ma wyłączoną możliwość
+    obsługi plików Cookies, co może spowodować utratę części funkcjonalności.</p></div>
+<div class="technical-information old-ie"><p>Twoja wersja przeglądarki nie obsługuje usługi Historia
+    Pojazdu. Zaktualizuj przeglądarkę do najnowszej wersji.</p></div>
+<header role="banner">
+    <form id="masterForm" name="masterForm" method="post" action="/historia-pojazdu-web/index.xhtml"
+          enctype="application/x-www-form-urlencoded"><input type="hidden" name="masterForm"
+                                                             value="masterForm">
+        <div class="header-wrapper">
+            <div class="logo"><a href="/strona-glowna"
+                                 onclick="return oFormularzHistoriaPojazdu.clearForm();"
+                                 title="Historia pojazdu - Bezpłatny raport z państwowej bazy danych CEP">
+                <span class="icon-logo"></span> HistoriaPojazdu.gov.pl <strong>Bezpłatny raport z
+                Centralnej Ewidencji Pojazdów</strong> </a></div>
+            <div class="top-menu">
+                <div class="font-size"><a id="pomniejszCzcionke" class="font-minus" href="#"
+                                          title="Zmniejsz czcionkę">-</a> <a
+                        id="czcionkaStandardowa" class="font-standard" href="#"
+                        title="Czcionka standardowa">A</a> <a id="powiekszCzcionke"
+                                                              class="font-plus" href="#"
+                                                              title="Zwiększ czcionkę">+</a> <span
+                        class="font-label">Wielkość liter</span></div>
+                <div class="contrast"><a id="kontrast" href="#" title="Kontrast"><span
+                        class="icon-contrast"><img
+                        src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/icon-contrast.png"
+                        alt=""></span>Kontrast</a></div>
+                <div class="english">
+                    <div class="portlet-boundary portlet-boundary_82_ portlet-static portlet-static-end portlet-borderless portlet-language "
+                         id="p_p_id_82_"><span id="p_82"></span>
+                        <div class="portlet-borderless-container" style="">
+                            <div class="portlet-body"><span class="taglib-language-list-text"
+                                                            lang="pl-PL">polski</span> <a
+                                    href="https://historiapojazdu.gov.pl/strona-glowna?p_p_id=82&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;_82_struts_action=%2Flanguage%2Fview&amp;_82_redirect=%2Fstrona-glowna%2F-%2Fhipo%2FhistoriaPojazdu%2Fcepik%3Fp_auth%3DqGDZnIvw&amp;_82_languageId=en_GB"
+                                    class="taglib-language-list-text last" lang="en-GB"
+                                    title="English">English</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!--div class="english"> <script type="text/javascript" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/js/jsf.js?ln=javax.faces"></script> <a id="zmienJezyk" href="#" title="English" onclick="mojarra.jsfcljs(document.getElementById('masterForm'),{'zmienJezyk':'zmienJezyk'},'');return false">English</a> </div-->
+            </div>
+        </div>
+        <input type="hidden" id="com.sun.faces.StatelessPostback"
+               name="com.sun.faces.StatelessPostback" value="value"></form>
+</header>
+<main class="main" role="main">
+    <div class="columns-1" id="main-content" role="main">
+        <div class="portlet-layout row-fluid">
+            <div class="portlet-column portlet-column-only span12" id="column-1">
+                <div class="portlet-dropzone portlet-column-content portlet-column-content-only"
+                     id="layout-column_column-1">
+                    <div class="portlet-boundary portlet-boundary_historiapojazduportlet_WAR_historiapojazduportlet_ portlet-static portlet-static-end portlet-borderless "
+                         id="p_p_id_historiapojazduportlet_WAR_historiapojazduportlet_"><span
+                            id="p_historiapojazduportlet_WAR_historiapojazduportlet"></span>
+                        <div class="portlet-borderless-container" style="">
+                            <div class="portlet-body">
+                                <link href="/historia-pojazdu-portlet/css/main.css?version=3.3.0"
+                                      rel="stylesheet">
+                                <script src="/historia-pojazdu-portlet/js/jsf.js?version=3.3.0"></script>
+                                <script src="/historia-pojazdu-portlet/js/general.js?version=3.3.0"></script>
+                                <script type="text/javascript">
+                                    function f1(d){switch(d.status){case"begin":console.log("begin poczatek");console.log("searching begining");var c=$(".messageField1").val();var b=$(".loadMessage .komunikat2Message ");var a=$(".loadMessage .komunikat2");a.addClass("INFO");a.removeClass("NONE");console.log("loading message : "+c);b.html(c);console.log("change message applied");console.log("dodaje kolor niebieski begin 1");$(".komunikat2").css("background-color","#406fb3");console.log("dodalo kolor niebieski begin 1");console.log("btnNapisPokazCar ukrywam begin");$(".btnNapisPokazCar").css("display","none");console.log("begin koniec");break;case"complete":console.log("complete poczatek");console.log("btnNapisPokazCar ukrywam complete");$(".btnNapisPokazCar").css("display","none");console.log("dodaje kolor niebieski complete 1");$(".komunikat2").css("background-color","#406fb3");console.log("dodalo kolor niebieski complete 1");console.log("complete koniec");break;case"success":console.log("success poczatek");console.log("dodaje kolor niebieski success 1");$(".komunikat2").css("background-color","#406fb3");console.log("dodalo kolor niebieski success 1");console.log("success nazwa klasy:");var e=$(".komunikat2");console.log(e);$(".komunikat2.NONE").css("display","none");console.log("success koniec");break}};
+                                </script>
+                                <div id="_historiapojazduportlet_WAR_historiapojazduportlet_"
+                                     class="liferay-faces-bridge-body">
+                                    <div class="background-dark">
+                                        <section class="raport-header-wrapper">
+                                            <div class="line-top"></div>
+                                            <div class="raport-header-apla">
+                                                <section class="raport-header">
+                                                    <div class="raport-main-information" id="dane-podstawowe">
+                                                        <h1>RAPORT O
+                                                        POJEŹDZIE </h1>
+                                                        <form id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7"
+                                                              name="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7"
+                                                              method="post"
+                                                              action="https://historiapojazdu.gov.pl/strona-glowna?p_auth=qGDZnIvw&amp;p_p_id=historiapojazduportlet_WAR_historiapojazduportlet&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdRender=%2Fviews%2Fview.xhtml"
+                                                              enctype="application/x-www-form-urlencoded">
+                                                            <input type="hidden"
+                                                                   name="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7"
+                                                                   value="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7">
+                                                            <input type="hidden"
+                                                                   name="javax.faces.encodedURL"
+                                                                   value="https://historiapojazdu.gov.pl/strona-glowna?p_p_id=historiapojazduportlet_WAR_historiapojazduportlet&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_historiapojazduportlet_WAR_historiapojazduportlet__jsfBridgeAjax=true&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdResource=%2Fviews%2Fview.xhtml&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdRender=%2Fviews%2Findex.xhtml&amp;_historiapojazduportlet_WAR_historiapojazduportlet_javax.faces.ViewState=-8974782104991192995%3A-8708840166035255804&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:vin=TMBNC25J7C7016783&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:data=17.10.2011&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:btnSprawdz=Sprawd%C3%85%C2%BA+pojazd+%C3%82%C2%BB&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:formularz=_historiapojazduportlet_WAR_historiapojazduportlet_%3Aformularz&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:rej=sci81563&amp;_historiapojazduportlet_WAR_historiapojazduportlet_javax.faces.encodedURL=https%3A%2F%2Fhistoriapojazdu.gov.pl%2Fstrona-glowna%3Fp_p_id%3Dhistoriapojazduportlet_WAR_historiapojazduportlet%26p_p_lifecycle%3D2%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_cacheability%3DcacheLevelPage%26p_p_col_id%3Dcolumn-1%26p_p_col_count%3D1%26_historiapojazduportlet_WAR_historiapojazduportlet__jsfBridgeAjax%3Dtrue%26_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdResource%3D%252Fviews%252Findex.xhtml">
+                                                            <div class="group-text"><p class="name">
+                                                                <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:marka"
+                                                                      class="uppercase">SKODA</span>,
+                                                                <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:typ"
+                                                                      class="uppercase">5J</span>,
+                                                                <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:model" class="uppercase">ROOMSTER</span>
+                                                            </p>
+                                                                <p class="typ"><span
+                                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:rodzaj"
+                                                                        class="lowercase">SAMOCHÓD OSOBOWY</span>,
+                                                                    <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:podrodzaj"
+                                                                          class="lowercase">WIELOZADANIOWY</span>
+                                                                </p>
+                                                                <p class="engine"><span
+                                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:pojemnosc">1390&nbsp;cm³</span>,
+                                                                    <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:paliwo"
+                                                                          class="lowercase">benzyna</span>,
+                                                                    <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:j_idt7:paliwoAlternatywne"
+                                                                          class="lowercase">gaz płynny (propan butan)</span>
+                                                                </p></div>
+                                                            <div class="group-text data"><p
+                                                                    class="year">Rok produkcji:
+                                                                <span class="strong">2011 </span>
+                                                            </p>
+                                                                <p class="vin">VIN: <span
+                                                                        class="strong">TMBNC25J7C7016783 </span>
+                                                                </p>
+                                                                <p class="oc">Polisa OC: <span
+                                                                        class="strong">aktualna </span>
+                                                                </p>
+                                                                <p class="tech">Badanie techniczne:
+                                                                    <span class="strong">aktualne </span>
+                                                                </p>
+                                                                <p class="km">Ostatni zarejestrowany
+                                                                    stan licznika: <span
+                                                                            class="strong">145 294 km </span>
+                                                                </p>
+                                                                <p class="status">Status
+                                                                    rejestracji: <span
+                                                                            class="strong">zarejestrowany </span>
+                                                                </p></div>
+                                                            <input type="hidden"
+                                                                   name="javax.faces.ViewState"
+                                                                   id="javax.faces.ViewState"
+                                                                   value="-8974782104991192995:-5267204751570868831"
+                                                                   autocomplete="off"></form>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="content-wrapper">
+                                        <nav class="nav-raport" id="nawigator"><a
+                                                onclick="ga('send', 'pageview', '/raport/informacje')"
+                                                href="#" id="raport-content-template-info-button"
+                                                style="background-color: #aaa;"
+                                                class="btn btn-information corner-left"
+                                                title="Informacje"> <span class="button-text">Informacje</span>
+                                        </a> <a onclick="ga('send', 'pageview', '/raport/os-czasu')"
+                                                href="#"
+                                                id="raport-content-template-timeline-button"
+                                                title="Oś czasu" class="btn btn-timeline"> <span
+                                                class="button-text">Oś czasu</span> </a> <a
+                                                onclick="ga('send', 'pageview', '/raport/dane-zagraniczne')"
+                                                href="#"
+                                                id="raport-content-template-dane-zagraniczne-button"
+                                                title="Dane zagraniczne"
+                                                class="btn btn-dane-zagraniczne corner-right state-active">
+                                            <span class="button-text">Dane zagraniczne</span> </a>
+                                            <div class="clear"></div>
+                                        </nav>
+                                        <section class="box-dane-zagraniczne"
+                                                 style="display: block;"
+                                                 aria-label="Raport - dane zagraniczne"
+                                                 id="sekcja-dane-zagraniczne">
+                                            <form id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form"
+                                                  name="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form"
+                                                  method="post"
+                                                  action="https://historiapojazdu.gov.pl/strona-glowna?p_auth=qGDZnIvw&amp;p_p_id=historiapojazduportlet_WAR_historiapojazduportlet&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdRender=%2Fviews%2Fview.xhtml"
+                                                  enctype="application/x-www-form-urlencoded"
+                                                  style="display: block;"><input type="hidden"
+                                                                                 name="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form"
+                                                                                 value="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form">
+                                                <input type="hidden" name="javax.faces.encodedURL"
+                                                       value="https://historiapojazdu.gov.pl/strona-glowna?p_p_id=historiapojazduportlet_WAR_historiapojazduportlet&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_historiapojazduportlet_WAR_historiapojazduportlet__jsfBridgeAjax=true&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdResource=%2Fviews%2Fview.xhtml&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdRender=%2Fviews%2Findex.xhtml&amp;_historiapojazduportlet_WAR_historiapojazduportlet_javax.faces.ViewState=-8974782104991192995%3A-8708840166035255804&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:vin=TMBNC25J7C7016783&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:data=17.10.2011&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:btnSprawdz=Sprawd%C3%85%C2%BA+pojazd+%C3%82%C2%BB&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:formularz=_historiapojazduportlet_WAR_historiapojazduportlet_%3Aformularz&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:rej=sci81563&amp;_historiapojazduportlet_WAR_historiapojazduportlet_javax.faces.encodedURL=https%3A%2F%2Fhistoriapojazdu.gov.pl%2Fstrona-glowna%3Fp_p_id%3Dhistoriapojazduportlet_WAR_historiapojazduportlet%26p_p_lifecycle%3D2%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_cacheability%3DcacheLevelPage%26p_p_col_id%3Dcolumn-1%26p_p_col_count%3D1%26_historiapojazduportlet_WAR_historiapojazduportlet__jsfBridgeAjax%3Dtrue%26_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdResource%3D%252Fviews%252Findex.xhtml">
+                                                <a id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:napisPokazCar"
+                                                   href="#" style="display: none;"
+                                                   onclick="mojarra.ab(this,event,'action',0,'_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:ryzykaPojazdGroup _historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:komunikat',{'onevent':f1});return false"
+                                                   class="btnNapisPokazCar"
+                                                   name="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:napisPokazCar">Kliknij
+                                                    tutaj, aby sprawdzić, czy za granicą odnotowano
+                                                    ryzyka dla pojazdu. Podane dane zostaną
+                                                    przesłane do systemu zewnętrznego w celu
+                                                    wyszukania pojazdu w dostępnych zbiorach
+                                                    danych.</a> <!--testowy do usuniecia--><a
+                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:j_idt58"
+                                                        href="#" style="display: none;"
+                                                        onclick="jsf.util.chain(this,event,'javascript:akcjaUkryjJeslizPZ();','mojarra.ab(this,event,\'action\',\'@this\',\'@none\')');return false">test
+                                                    - akcje jesli z pz</a>
+                                                <!-- vv pomocniczy button vv -->
+                                                <!--type submit--><input
+                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:btnKliknijCarfax"
+                                                        type="submit"
+                                                        name="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:btnKliknijCarfax"
+                                                        value="btnKliknijCarfax"
+                                                        style="display: none;"
+                                                        class="btn btnKliknijCarfax"
+                                                        onclick="mojarra.ab(this,event,'action','@this','@form');return false">
+                                                <!--&lt;c:if test=&quot;false&quot; &gt;-->
+                                                <!--style=&quot;display: none;&quot;-->
+                                                <!--miejscie na komunikaty o braku pojazdu w cafraxie i braku dostepu-->
+                                                <!--rendered=&quot;false&quot;--><span
+                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:komunikat"
+                                                        class="komunikat">
+                            <div class="loadMessage">
+                                <span id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:komunikatNieZnaleziono"
+                                      class="komunikat2 NONE"
+                                      style="background-color: rgb(64, 111, 179); display: none;">
+        <div class="komunikat2Obrazek">
+
+        </div>
+        <div class="komunikat2Message"></div></span>
+                            </div></span><input id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:loadingMessageField"
+                                                type="text"
+                                                name="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:loadingMessageField"
+                                                value="Wyszukiwanie w zewnętrznej bazie danych..."
+                                                class="messageField1" style="display: none">
+                                                <div id="load_info"
+                                                     style="background-color: aquamarine;display:none">
+                                                    ... ładuje ...
+                                                </div> <!--&lt;/c:if&gt;--><span
+                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:ryzykaPojazdGroup"><div
+                                                        id="_historiapojazduportlet_WAR_historiapojazduportlet_:pokaz-dane-carfax-form:ryzyka-pojazdu"
+                                                        class="ryzyka-pojazdu">
+                            <div id="itemDaneTech" style="display: none" class="itemDaneTech"><img
+                                    src="/historia-pojazdu-portlet/images/icon-techniczne.png"
+                                    alt="ikona - dane techniczne" class="img-icon">
+                                <h2>Dane techniczne
+                                </h2>
+                                <div class="group-text"><p>
+                                                <span>Rok produkcji
+                                                </span>
+                                        <strong>
+                                                    <span class="value">2012
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>VIN:
+                                                </span>
+                                        <strong>
+                                                    <span class="value">TMBNC25J7C7016783
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>Marka:
+                                                </span>
+                                        <strong>
+                                                    <span class="value">Skoda
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>Model:
+                                                </span>
+                                        <strong>
+                                                    <span class="value">Roomster
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>Pojemność silnika:
+                                                </span>
+                                        <strong>
+                                                    <span class="value">1390 cm³
+                                                    </span>
+                                        </strong>
+                                    </p>
+                                    <p>
+                                                <span>Rodzaj paliwa</span>
+                                        <strong>
+                                                    <span class="value">Benzyna
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>Moc silnika (kW)
+                                                </span>
+                                        <strong>
+                                                    <span class="value">86
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>Moc silnika (PS)
+                                                </span>
+                                        <strong>
+                                                    <span class="value">63
+                                                    </span>
+                                        </strong>
+                                    </p><p>
+                                                <span>Emisja CO₂:
+                                                </span>
+                                        <strong>
+                                                    <span class="value">149
+                                                    </span>
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <h2>Ryzyka
+                            </h2>
+                            <table id="table-ryzyka">
+                                <thead>
+                                <tr id="kradzione">
+                                    <th><strong>Kradzież </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano kradzieży.</span>
+                                            </p>
+                                    </th>
+                                </tr>
+                                <tr id="zlomowane">
+                                    <th><strong>Złomowanie  </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano złomowania.</span>
+                                            </p>
+                                    </th>
+                                </tr>
+                                <tr id="powypadkowe">
+                                    <th><strong>Powypadkowy  </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano wypadków ani użycia poduszki powietrznej.</span>
+                                            </p>
+                                    </th>
+                                </tr>
+                                <tr id="uszkodzone">
+                                    <th><strong>Uszkodzony </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano szkody całkowitej lub zniszczenia powodziowego.</span>
+                                            </p>
+                                    </th>
+                                </tr>
+                                <tr id="przekrecone-liczniki">
+                                    <th><strong>Przekręcone liczniki </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano problemów związanych z niezgodnością przebiegu pojazdu.</span>
+                                            </p>
+                                    </th>
+                                </tr>
+                                <tr id="przeszedl-przeglad">
+                                    <th><strong>Niedopuszczony do ruchu </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano problemów z kontrolą pojazdu ani innych.</span>
+                                            </p>
+                                    </th>
+                                </tr>
+                                <tr id="taxi">
+                                    <th><strong>Służył jako taxi </strong></th>
+                                    <th class="axis"><img
+                                            src="/historia-pojazdu-portlet/images/norisk.png"
+                                            alt="">
+                                    </th>
+                                    <th>
+                                            <p>
+                                                <span class="value">Nie odnotowano, że pojazd był używany jako taksówka. </span>
+                                            </p>
+                                    </th>
+                                </tr>
+
+                                </thead>
+                            </table></div></span><input type="hidden" name="javax.faces.ViewState"
+                                                        id="javax.faces.ViewState"
+                                                        value="-8974782104991192995:-5267204751570868831"
+                                                        autocomplete="off"></form>
+                                            <div class="clear"></div>
+                                        </section>
+                                        <section class="box-information" style="display: block;"
+                                                 role="alert"
+                                                 aria-label="Raport - informacje techniczne">
+                                            <div class="item"><img
+                                                    src="/historia-pojazdu-portlet/images/icon-techniczne.png"
+                                                    alt="ikona - dane techniczne" class="img-icon">
+                                                <h2>Dane techniczne </h2>
+                                                <div class="group-text"><p>
+                                                    <span>Pojemność silnika: </span> <strong> <span
+                                                        class="value">1390 cm³ </span> </strong></p>
+                                                    <p><span>Moc silnika: </span> <strong> <span
+                                                            class="value">63 kW </span> </strong>
+                                                    </p>
+                                                    <p><span>Paliwo: </span> <strong> <span
+                                                            class="value">benzyna </span> </strong>
+                                                    </p>
+                                                    <p><span>Paliwo alternatywne: </span> <strong>
+                                                        <span class="value">gaz płynny (propan butan) </span>
+                                                    </strong></p>
+                                                    <p><span>Emisja CO₂: </span> <strong> <span
+                                                            class="value"> 149 g/km </span>
+                                                    </strong></p>
+                                                    <p>
+                                                        <span>Średnie zużycie paliwa na 100km: </span>
+                                                        <strong> <span class="value">6 l </span>
+                                                        </strong></p></div>
+                                                <div class="group-text"><p><span>Liczba miejsc ogółem: </span>
+                                                    <strong> <span class="value">5 </span> </strong>
+                                                </p>
+                                                    <p><span>Liczba miejsc siedzących: </span>
+                                                        <strong> <span class="value">5 </span>
+                                                        </strong></p></div>
+                                                <div class="group-text"><p><span>Masa własna pojazdu: </span>
+                                                    <strong> <span class="value">1134 kg </span>
+                                                    </strong></p>
+                                                    <p><span>Maks. masa całkowita ciągniętej przyczepy z hamulcem: </span>
+                                                        <strong> <span class="value">900 kg </span>
+                                                        </strong></p>
+                                                    <p><span>Maks. masa całkowita ciągniętej przyczepy bez hamulca: </span>
+                                                        <strong> <span class="value">450 kg </span>
+                                                        </strong></p>
+                                                    <p><span>Dopuszczalna masa całkowita: </span>
+                                                        <strong> <span class="value">1664 kg </span>
+                                                        </strong></p></div>
+                                                <div class="group-text"><p><span>Liczba osi: </span>
+                                                    <strong> <span class="value">2 </span> </strong>
+                                                </p>
+                                                    <p><span>Rozstaw osi: </span> <strong> <span
+                                                            class="value">2608 mm </span> </strong>
+                                                    </p>
+                                                    <p><span>Rozstaw kół (średni): </span> <strong>
+                                                        <span class="value">4337 mm </span>
+                                                    </strong></p></div>
+                                            </div>
+                                            <div class="item"><img
+                                                    src="/historia-pojazdu-portlet/images/icon-dokumenty.png"
+                                                    alt="ikona - dokumenty" class="img-icon">
+                                                <h2>Dokumenty </h2>
+                                                <div class="group-text"><p><span>Data wydania aktualnego dowodu rejestracyjnego: </span>
+                                                    <strong> <span class="value">30.07.2015 </span>
+                                                    </strong></p>
+                                                    <p><span>Data wydania karty pojazdu: </span>
+                                                        <strong> <span
+                                                                class="value">29.09.2011 </span>
+                                                        </strong></p></div>
+                                                <div class="group-text">
+                                                    <div class="approval-certificate"><h3>Świadectwo
+                                                        homologacji </h3>
+                                                        <div class="group-text"><p>
+                                                            <span>Numer: </span> <strong> <span
+                                                                class="value">E11*2001/116*0291*32 </span>
+                                                        </strong></p>
+                                                            <p><span>Kategoria: </span> <strong>
+                                                                <span class="value">M1 </span>
+                                                            </strong></p>
+                                                            <p><span>Wersja: </span> <strong> <span
+                                                                    class="value">NFM5FM52T08914N0 </span>
+                                                            </strong></p>
+                                                            <p><span>Wariant: </span> <strong> <span
+                                                                    class="value">AFCGGBX01 </span>
+                                                            </strong></p></div>
+                                                        <div class="timeline-information-spacer"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </section>
+                                        <section class="box-timeline" style="display: none;"
+                                                 role="alert" aria-label="Raport - oś czasu">
+                                            <table id="timeline">
+                                                <thead>
+                                                <tr id="production">
+                                                    <th class="date" scope="row">
+                                                        <strong>2011</strong></th>
+                                                    <th class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/Osobowy.png"
+                                                            alt=""></th>
+                                                    <th class="description"><strong>Rok
+                                                        produkcji</strong></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="event">
+                                                    <td class="date" scope="row"><p>17.10.2011</p>
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/pierwszy-wlasciciel.png"
+                                                            alt=""></td>
+                                                    <td class="description PIERWSZY_WLASCICIEL"><p
+                                                            class="PIERWSZY_WLASCICIEL">Pierwszy
+                                                        właściciel w Polsce </p>
+                                                        <p><span
+                                                                class="wlasciciel key">Właściciel: </span><span
+                                                                class="wlasciciel prywatny value">osoba fizyczna</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="miejsceRejestracji key">Województwo, w którym pojazd zarejestrowano: </span><span
+                                                                class="miejsceRejestracji 28 value">warmińsko-mazurskie</span>
+                                                        </p>
+                                                        <p></p></td>
+                                                </tr>
+                                                <tr class="event">
+                                                    <td class="date" scope="row"><p>17.10.2011</p>
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/pierwsza-rejestracja-w-polsce.png"
+                                                            alt=""></td>
+                                                    <td class="description PIERWSZA_REJESTRACJA_W_POLSCE">
+                                                        <p class="PIERWSZA_REJESTRACJA_W_POLSCE">
+                                                            Pierwsza rejestracja w Polsce </p></td>
+                                                </tr>
+                                                <tr class="event">
+                                                    <td class="date" scope="row"><p>06.07.2015</p>
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/zmiana-wlasciciela.png"
+                                                            alt=""></td>
+                                                    <td class="description ZMIANA_WLASCICIELA"><p
+                                                            class="ZMIANA_WLASCICIELA">Zmiana
+                                                        właściciela </p>
+                                                        <p><span
+                                                                class="wlasciciel key">Właściciel: </span><span
+                                                                class="wlasciciel prywatny value">osoba fizyczna</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="miejsceRejestracji key">Województwo, w którym pojazd zarejestrowano: </span><span
+                                                                class="miejsceRejestracji 24 value">śląskie</span>
+                                                        </p>
+                                                        <p></p></td>
+                                                </tr>
+                                                <tr class="event">
+                                                    <td class="date" scope="row"><p>16.04.2016</p>
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/badanie-techniczne.png"
+                                                            alt=""></td>
+                                                    <td class="description BADANIE_TECHNICZNE"><p
+                                                            class="BADANIE_TECHNICZNE">Badanie
+                                                        techniczne (ważne do 16.04.2017) </p>
+                                                        <p></p>
+                                                        <p></p>
+                                                            <p><span class="rodzajBadania key">Rodzaj badania: </span><span
+                                                                class="rodzajBadania DICT098_OKR value">okresowe</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="wynikBadania key">Wynik badania: </span><span
+                                                                class="wynikBadania Pozytywne value">pozytywne</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="stanLicznika key">Ostatni zarejestrowany stan licznika: </span><span
+                                                                class="stanLicznika 86003 value">86 003 km</span>
+                                                        </p>
+                                                        <p><span class="warning">(Uwaga. Stan licznika gromadzimy od 2014)</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p></p></td>
+                                                </tr>
+                                                <tr class="event">
+                                                    <td class="date" scope="row"><p>04.03.2017</p>
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/badanie-techniczne.png"
+                                                            alt=""></td>
+                                                    <td class="description BADANIE_TECHNICZNE"><p
+                                                            class="BADANIE_TECHNICZNE">Badanie
+                                                        techniczne (ważne do 04.03.2018) </p>
+                                                        <p></p>
+                                                        <p></p>
+                                                        <p><span class="rodzajBadania key">Rodzaj badania: </span><span
+                                                                class="rodzajBadania DICT098_OKR value">okresowe</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="wynikBadania key">Wynik badania: </span><span
+                                                                class="wynikBadania Pozytywne value">pozytywne</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="stanLicznika key">Ostatni zarejestrowany stan licznika: </span><span
+                                                                class="stanLicznika 108854 value">108 854 km</span>
+                                                        </p>
+                                                        <p><span class="warning">(Uwaga. Stan licznika gromadzimy od 2014)</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p></p></td>
+                                                </tr>
+                                                <tr class="event">
+                                                    <td class="date" scope="row"><p>31.03.2018</p>
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/badanie-techniczne.png"
+                                                            alt=""></td>
+                                                    <td class="description BADANIE_TECHNICZNE"><p
+                                                            class="BADANIE_TECHNICZNE">Badanie
+                                                        techniczne (ważne do 31.03.2019) </p>
+                                                        <p></p>
+                                                        <p></p>
+                                                        <p><span class="rodzajBadania key">Rodzaj badania: </span><span
+                                                                class="rodzajBadania DICT098_OKR value">okresowe</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="wynikBadania key">Wynik badania: </span><span
+                                                                class="wynikBadania Pozytywne value">pozytywne</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p><span class="stanLicznika key">Ostatni zarejestrowany stan licznika: </span><span
+                                                                class="stanLicznika 145294 value">145 294 km</span>
+                                                        </p>
+                                                        <p><span class="warning">(Uwaga. Stan licznika gromadzimy od 2014)</span>
+                                                        </p>
+                                                        <p></p>
+                                                        <p></p></td>
+                                                </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr id="summary">
+                                                    <td class="date" scope="row">11.02.2019
+                                                        21:21:09
+                                                    </td>
+                                                    <td class="axis"><img
+                                                            src="/historia-pojazdu-portlet/images/end-of-timeline.png"
+                                                            alt=""></td>
+                                                    <td class="description"><p>Wygenerowanie
+                                                        raportu </p></td>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                            <div class="summary-box" id="timeline-summary-box">
+                                                <div class="group-box"><h3>Podsumowanie
+                                                    zdarzeń: </h3>
+                                                    <p>Właściciele (od rejestracji do wygenerowania
+                                                        raportu): <span class="value">2</span></p>
+                                                    <p>Współwłaściciele (od rejestracji do
+                                                        wygenerowania raportu): <span class="value">0</span>
+                                                    </p></div>
+                                                <div class="group-box"><h3>Stan aktualny: </h3>
+                                                    <p>Województwo, w którym pojazd zarejestrowano:
+                                                        <span class="value">śląskie</span></p>
+                                                    <p>Polisa OC: <span
+                                                            class="value">aktualna</span></p>
+                                                    <p>Badanie techniczne: <span class="value">aktualne</span>
+                                                    </p>
+                                                    <p class="txt-red"></p>
+                                                    <p>Liczba właścicieli: <span
+                                                            class="value">1</span></p>
+                                                    <p>Liczba współwłaścicieli: <span class="value">0</span>
+                                                    </p></div>
+                                            </div>
+                                        </section>
+                                        <section class="extra-button raport">
+                                            <div class="left">
+                                                <form id="_historiapojazduportlet_WAR_historiapojazduportlet_:formularz"
+                                                      name="_historiapojazduportlet_WAR_historiapojazduportlet_:formularz"
+                                                      method="post"
+                                                      action="https://historiapojazdu.gov.pl/strona-glowna?p_auth=qGDZnIvw&amp;p_p_id=historiapojazduportlet_WAR_historiapojazduportlet&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdRender=%2Fviews%2Fview.xhtml"
+                                                      enctype="application/x-www-form-urlencoded">
+                                                    <input type="hidden"
+                                                           name="_historiapojazduportlet_WAR_historiapojazduportlet_:formularz"
+                                                           value="_historiapojazduportlet_WAR_historiapojazduportlet_:formularz">
+                                                    <input type="hidden"
+                                                           name="javax.faces.encodedURL"
+                                                           value="https://historiapojazdu.gov.pl/strona-glowna?p_p_id=historiapojazduportlet_WAR_historiapojazduportlet&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_historiapojazduportlet_WAR_historiapojazduportlet__jsfBridgeAjax=true&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdResource=%2Fviews%2Fview.xhtml&amp;_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdRender=%2Fviews%2Findex.xhtml&amp;_historiapojazduportlet_WAR_historiapojazduportlet_javax.faces.ViewState=-8974782104991192995%3A-8708840166035255804&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:vin=TMBNC25J7C7016783&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:data=17.10.2011&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:btnSprawdz=Sprawd%C3%85%C2%BA+pojazd+%C3%82%C2%BB&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:formularz=_historiapojazduportlet_WAR_historiapojazduportlet_%3Aformularz&amp;_historiapojazduportlet_WAR_historiapojazduportlet_:rej=sci81563&amp;_historiapojazduportlet_WAR_historiapojazduportlet_javax.faces.encodedURL=https%3A%2F%2Fhistoriapojazdu.gov.pl%2Fstrona-glowna%3Fp_p_id%3Dhistoriapojazduportlet_WAR_historiapojazduportlet%26p_p_lifecycle%3D2%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_cacheability%3DcacheLevelPage%26p_p_col_id%3Dcolumn-1%26p_p_col_count%3D1%26_historiapojazduportlet_WAR_historiapojazduportlet__jsfBridgeAjax%3Dtrue%26_historiapojazduportlet_WAR_historiapojazduportlet__facesViewIdResource%3D%252Fviews%252Findex.xhtml">
+                                                    <div class="btn-pdf-wrapper"><a
+                                                            id="_historiapojazduportlet_WAR_historiapojazduportlet_:pobierzRaportPdf"
+                                                            href="#" title="Pobierz PDF"
+                                                            onclick="mojarra.jsfcljs(document.getElementById('_historiapojazduportlet_WAR_historiapojazduportlet_:formularz'),{'_historiapojazduportlet_WAR_historiapojazduportlet_:pobierzRaportPdf':'_historiapojazduportlet_WAR_historiapojazduportlet_:pobierzRaportPdf'},'');return false"
+                                                            class="download-btn"><img
+                                                            src="/historia-pojazdu-portlet/images/icon-pdf.png"
+                                                            alt="pdf"><span
+                                                            class="txt">Pobierz PDF</span></a></div>
+                                                    <!--href=&quot;/strona-glowna&quot;--> <a
+                                                        id="powrot" href="/" class="main-page-btn"
+                                                        title="Powrót do strony głównej"> <span
+                                                        class="button-text">Powrót do strony głównej</span>
+                                                </a><input type="hidden"
+                                                           name="javax.faces.ViewState"
+                                                           id="javax.faces.ViewState"
+                                                           value="-8974782104991192995:-5267204751570868831"
+                                                           autocomplete="off"></form>
+                                            </div>
+                                            <div class="footer"> Uzyskane dane lub informacje (dalej
+                                                zwane łącznie „danymi") można wykorzystać tylko na
+                                                własne ryzyko i na własną odpowiedzialność. Raport
+                                                został wygenerowany zgodnie z aktualnym stanem
+                                                Centralnej Ewidencji Pojazdów (CEP). Dane w CEP mogą
+                                                nie odzwierciedlać stanu rzeczywistego, gdyż m.in.:
+                                                <ul class="list">
+                                                    <li>dane gromadzone w Centralnej Ewidencji
+                                                        Pojazdów przekazują w różnym trybie i
+                                                        terminach różne zobowiązane do tego
+                                                        instytucje, w tym organy zajmujące się
+                                                        rejestracją pojazdów, stacje kontroli
+                                                        pojazdów i Policja;
+                                                    </li>
+                                                    <li>Minister Cyfryzacji nie jest co do zasady
+                                                        uprawniony do samodzielnego: sprawdzania,
+                                                        wprowadzania, uzupełniania, aktualizowania,
+                                                        zmieniania lub usuwania gromadzonych danych;
+                                                    </li>
+                                                    <li>na dane w CEP mogą mieć wpływ okoliczności
+                                                        związane z ich gromadzeniem (w tym siła
+                                                        wyższa, poziom jakości usług
+                                                        teletransmisyjnych, terminy przekazywania
+                                                        danych).
+                                                    </li>
+                                                </ul>
+                                                Podstawa prawna: Art. 80a ust. 2 i art. 80cb ust. 1
+                                                i 3 ustawy z dnia 20 czerwca 1997 r. Prawo o ruchu
+                                                drogowym (t.j. Dz. U. z 2017 r. poz. 1260). <br>
+                                                <br> Informacje zaprezentowane w sekcji „Dane
+                                                zagraniczne” pochodzą z systemu zewnętrznego i
+                                                opierają się na danych uzyskiwanych przez ten system
+                                                m.in. z terenu USA, Kanady i niektórych krajów
+                                                europejskich, m.in. Belgii, Holandii, Hiszpanii,
+                                                Szwecji, Norwegii. Inne informacje o tym pojeździe,
+                                                w tym ryzyka, zidentyfikowane w innych krajach, mogą
+                                                nie być włączone do tego raportu.
+                                            </div>
+                                            <div class="clear"></div>
+                                        </section>
+                                    </div>
+                                    <script>ga("send","pageview","/raport/informacje");</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="#" id="hrefFm" method="post" name="hrefFm"><span></span></form>
+</main>
+<!--main class="main" role="main"> <div class="content-wrapper"> <div class="line-top"></div> <section class="box-form"> <form id="blad" name="blad" method="post" action="/historia-pojazdu-web/index.xhtml" enctype="application/x-www-form-urlencoded"> <input type="hidden" name="blad" value="blad" /> <p> </p><input type="hidden" id="com.sun.faces.StatelessPostback" name="com.sun.faces.StatelessPostback" value="value" /> </form> <h1 id="h1" class="mini">Wpisz dane z dowodu rejestracyjnego:</h1> <span class="h1">Wypełnij wszystkie pola.</span> <form id="formularz" name="formularz" method="post" action="/historia-pojazdu-web/index.xhtml" enctype="application/x-www-form-urlencoded"> <input type="hidden" name="formularz" value="formularz" /> <fieldset aria-labelledby="h1"> <div class="form historia-pojazdu"> <div class="row first"> <label id="nrRejestracyjnyEtykieta" for="rej" class="name">Numer rejestracyjny</label><input placeholder="AB1234" id="rej" type="text" name="rej" autocomplete="off" class="small" maxlength="9" tabindex="1" /><img id="numerRejestracyjnyDobry" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/valid.png" alt="Pole Numer rejestracyjny wypełnione poprawnie" title="Pole Numer rejestracyjny wypełnione poprawnie" class="valid-icon" /><img id="numerRejestracyjnyZly" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/error.png" alt="Błąd - Wpisz poprawny numer rejestracyjny" title="Wpisz poprawny numer rejestracyjny" class="error-icon" /> <a id="numerRejestracyjnyGdzie" href="#" class="where" onclick="ga('send', 'events', 'Gdzie znajde', 'nrRejestracyjny'); GdzieZnajde('rej',events);" title="Gdzie znajdę numer rejestracyjny?">Gdzie znajdę?</a> </div> <div class="row"> <label for="vin" class="name">Numer VIN</label><input placeholder="ABC123456789DEF" id="vin" type="text" name="vin" autocomplete="off" maxlength="25" tabindex="2" /><img id="numerVinDobry" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/valid.png" alt="Pole Numer VIN wypełnione poprawnie" title="Pole Numer VIN wypełnione poprawnie" class="valid-icon" /><img id="numerVinZly" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/error.png" alt="Błąd - Wpisz poprawny numer VIN" title="Wpisz poprawny numer VIN" class="error-icon" /> <a id="numerVinGdzie" href="#" class="where" onclick="ga('send', 'events', 'Gdzie znajde', 'VIN'); GdzieZnajde('vin',events);" title="Gdzie znajdę numer VIN?">Gdzie znajdę?</a> </div> <div class="row"> <label id="dataPierwszejRejestracjiEtykieta" for="data" class="name">Data pierwszej rejestracji</label><input placeholder="dd.mm.rrrr" id="data" type="text" name="data" autocomplete="off" class="small" tabindex="3" /><img id="dataRejestracjiDobry" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/valid.png" alt="Pole Data pierwszej rejestracji wypełnione poprawnie" title="Pole Data pierwszej rejestracji wypełnione poprawnie" class="valid-icon" /><img id="dataRejestracjiZly" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/error.png" alt="Błąd - Wpisz poprawną datę pierwszej rejestracji w&amp;nbsp;formacie dd.mm.rrrr" title="Wpisz poprawną datę pierwszej rejestracji w&amp;nbsp;formacie dd.mm.rrrr" class="error-icon" /> <a id="dataGdzie" href="#" class="where" onclick="ga('send', 'events', 'Gdzie znajde', 'dataRejestracji'); GdzieZnajde('data',events);" title="Gdzie znajdę datę pierwszej rejestracji?">Gdzie znajdę?</a> </div><input id="btnSprawdz" type="submit" name="btnSprawdz" value="Sprawdź pojazd »" tabindex="5" class="btn bg-blue btn-sprawdz" /> </div> </fieldset><input type="hidden" id="com.sun.faces.StatelessPostback" name="com.sun.faces.StatelessPostback" value="value" /> </form> <div class="clear"></div> </section> <section class="box-info film"> <div class="video-wrapper"> <iframe id="video" width="100%" height="100%" src="//www.youtube.com/embed/qV1IFlEtFhM?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen="true"></iframe> </div> <div class="pop-up" role="alert"> <div class="close-wrapper"><a href="#" class="close" title="Zamknij przykładowy dowód rejestracyjny"><img src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/icon-close.png" alt="ikona zamknij" /></a></div> <img id="img-rej" class="rej" role="alert" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/rej.jpg" alt="Numer rejestracyjny znajdziesz w polu A w dowodzie rejestracyjnym." /> <img id="img-vin" class="vin" role="alert" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/vin.jpg" alt="Numer VIN znajdziesz w polu E w dowodzie rejestracyjnym." /> <img id="img-data" class="data" role="alert" src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/images/data.jpg" alt="Datę pierwszej rejestracji znajdziesz w polu B w dowodzie rejestracyjnym." /> </div> <a id="przykladowyRaportPdf" class="link" href="przykladowy-raport.xhtml" title="Zobacz przykładowy raport">Zobacz przykładowy raport »</a> <a id="ousludze" class="link margin-top" href="o-usludze.xhtml" title="O usłudze">O usłudze »</a> <a id="oeusludze" class="link" href="inne-e-uslugi.xhtml" title="Skorzystaj z innych e-usług">Skorzystaj z innych e-usług »</a> <div class="clear"></div> </section> <div class="clear"></div> </div> </main-->
+<!-- HTML do edycji - START -->
+<footer role="contentinfo">
+    <div class="footer-wrapper"><a id="logoMC" class="logo-link logo-mc" href="https://mc.gov.pl"
+                                   title="Ministerstwo Cyfryzacji" target="_blank"> <span>Ministerstwo Cyfryzacji</span>
+    </a> <a id="linkCOI" class="logo-link logo-coi" href="http://www.coi.gov.pl"
+            title="Centralny Ośrodek Informatyki" target="_blank"> <span>Centralny Ośrodek Informatyki</span>
+    </a></div>
+</footer> <!-- HTML do edycji - KONIEC --><!--[if (!IE)|(IE 9) ]><!-->
+<script type="text/javascript"
+        src="https://historiapojazdu.gov.pl/Liferay_Historia_Pojazdu-theme/js/general-full.js?version=3.1.17"></script>
+<!--[endif]---->
+<div id="cookie_agree"><p><a title="Zamknij komunikat o cookies" href="#"
+                             class="zamknij">Zamknij</a> Witryna używa plików cookies do zapewnienia
+    Ci maksymalnego komfortu korzystania. Kontynuując przeglądanie naszej witryny bez zmiany
+    ustawień przeglądarki, wyrażasz zgodę na użycie plików cookie. Zawsze możesz zmienić ustawienia
+    przeglądarki i zablokować te pliki. </p></div>
+</body>
+</html>

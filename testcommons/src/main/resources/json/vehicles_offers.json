@@ -1,0 +1,91 @@
+{
+  "@context": "http:\/\/schema.org",
+  "@type": "Webpage",
+  "url": "https:\/\/www.otomoto.pl\/osobowe\/porsche\/?search[new_used]=on",
+  "price": {
+    "averagePrice": "90000",
+    "lowestPrice": "1200000",
+    "highestPrice": "60000"
+  },
+  "mainEntity": {
+    "@type": "OfferCatalog",
+    "name": "Otomoto",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "priceSpecification": {
+          "price": "219900",
+          "priceCurrency": "PLN",
+          "url": "https://www.otomoto.pl/oferta/porsche-911-carrera-targa-3-6-boxer-320km-salon-pl-ID6BRkuy.html#2e83b13067"
+        },
+        "itemOffered": {
+          "@type": "Car",
+          "name": "Porsche Cayenne",
+          "vehicleConfiguration": "Porsche Cayenne 3.0D 245KM Panorama, FV23%",
+          "brand": "Porsche",
+          "fuelType": "Diesel",
+          "modelDate": "2013",
+          "mileageFromOdometer": {
+            "@type": "QuantitativeValue",
+            "unitCode": "KMT",
+            "value": "57900"
+          }
+        }
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "OfferCatalog",
+    "name": "Otomoto",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "priceSpecification": {
+          "price": "219900",
+          "priceCurrency": "PLN",
+          "url": "https://www.otomoto.pl/oferta/porsche-911-carrera-targa-3-6-boxer-320km-salon-pl-ID6BRkuy.html#2e83b13067"
+        },
+        "itemOffered": {
+          "@type": "Car",
+          "name": "Porsche Cayenne",
+          "vehicleConfiguration": "Porsche Cayenne 3.0D 245KM Panorama, FV23%",
+          "brand": "Porsche",
+          "fuelType": "Diesel",
+          "modelDate": "2013",
+          "mileageFromOdometer": {
+            "@type": "QuantitativeValue",
+            "unitCode": "KMT",
+            "value": "57900"
+          }
+        }
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "OfferCatalog",
+    "name": "Otomoto",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "priceSpecification": {
+          "price": "219900",
+          "priceCurrency": "PLN",
+          "url": "https://www.otomoto.pl/oferta/porsche-911-carrera-targa-3-6-boxer-320km-salon-pl-ID6BRkuy.html#2e83b13067"
+        },
+        "itemOffered": {
+          "@type": "Car",
+          "name": "Porsche Cayenne",
+          "vehicleConfiguration": "Porsche Cayenne 3.0D 245KM Panorama, FV23%",
+          "brand": "Porsche",
+          "fuelType": "Diesel",
+          "modelDate": "2013",
+          "mileageFromOdometer": {
+            "@type": "QuantitativeValue",
+            "unitCode": "KMT",
+            "value": "57900"
+          }
+        }
+      }
+    ]
+  }
+}

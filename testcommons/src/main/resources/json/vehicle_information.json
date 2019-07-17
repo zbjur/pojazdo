@@ -1,0 +1,245 @@
+{
+  "brand": "Skoda",
+  "model": "Roomster",
+  "yearOfProduction": "2011",
+  "vin": "TMBNC25J7C7016783",
+  "engineCapacity": "1,4",
+  "insurance": "aktualna",
+  "technicalExamination": "aktualne",
+  "lastMeterState": "145 294 km ",
+  "registrationState": "zarejestrowany",
+  "capacity": "1,4",
+  "fuel": "beznyzna",
+  "alternativeFuel": "gaz",
+
+  "technicalData": {
+    "engineCapacity" :"1,4",
+    "enginePower":"64 kW",
+    "fuelType":"benzyna bezołowiowa",
+    "coEmEmission":"210 g/km",
+    "averageFuelCnsumption": "9 l"
+
+  },
+  "documents": {
+
+  },
+
+  "timeLine": [{
+    "key": "Całokształt",
+    "value": "3,90",
+    "timeLine": [
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      },
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      },
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      },
+      {
+        "key": "Całokształt",
+        "value": "3,90"
+      }
+    ]},
+    {
+      "key": "Całokształt",
+      "value": "3,90",
+      "timeLine": [
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        },
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        },
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        },
+        {
+          "key": "Całokształt",
+          "value": "3,90"
+        }
+      ]}],
+
+  "vehicleRating":{
+    "overallRating": "3,90",
+    "overallTitle": "średnia ocena z 213 ocen",
+    "buyAgainPercentage": "69%",
+    "buyAgainTitle": "użytkowników kupiłoby ponownie",
+    "ratings": [
+      {
+        "title": "Całokształt",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+
+      },
+      {
+        "title": "Silnik",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+
+      },
+      {
+        "title": "Skrzynia biegów",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Układ jezdny",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Karoseria",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Widoczność",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Ergonomia",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Wentylacja i ogrzewanie",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Przestrzeń dla kierowcy i pasażerów",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Koszty utrzymania",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "title": "Drobne usterki",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      }
+    ],
+
+    "Engine": [
+      {
+        "EngineName": "1.2 12V 70KM 51kW",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "EngineName": "1.2 12V 70KM 51kW",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "EngineName": "1.2 12V 70KM 51kW",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      },
+      {
+        "EngineName": "1.2 12V 70KM 51kW",
+        "rating": "3,90",
+        "url": "https://www.autocentrum.pl/oceny/skoda/roomster/mikrovan/silnik-diesla-1.9-tdi-105km-2006-2010/"
+      }
+
+    ],
+
+    "UserRatings": [
+      {
+        "rating": "4,1",
+        "User": "~andrzej",
+        "Model": "Skoda Roomster",
+        "Type": "Mikrovan 1.4 TDI 80KM 59kW",
+        "Comment": "Skodą Roomster 1.4 tdi jeżdżę ponad 6 lat.Przejechałem około 50000 tyś. kilometrów. Uważam że jest to bardzo praktyczny,tani w eksploatacji i niezawodny pojazd. Wnętrze zaprojektowane dla rodziny z dwojgiem niedużych dzieci lub dla małej firmy.Fotele łatwo się wyciąga i mamy ogromną przestrzeń bagażową. Wygodna pozycja za kierownicą.Dużo miejsca z przodu. Dobre fabryczne radio z możliwością połączenia z telefonem. Ogromny rynek tanich..."
+      },
+      {
+        "rating": "4,1",
+        "User": "~andrzej",
+        "Model": "Skoda Roomster",
+        "Type": "Mikrovan 1.4 TDI 80KM 59kW",
+        "Comment": "Skodą Roomster 1.4 tdi jeżdżę ponad 6 lat.Przejechałem około 50000 tyś. kilometrów. Uważam że jest to bardzo praktyczny,tani w eksploatacji i niezawodny pojazd. Wnętrze zaprojektowane dla rodziny z dwojgiem niedużych dzieci lub dla małej firmy.Fotele łatwo się wyciąga i mamy ogromną przestrzeń bagażową. Wygodna pozycja za kierownicą.Dużo miejsca z przodu. Dobre fabryczne radio z możliwością połączenia z telefonem. Ogromny rynek tanich..."
+      },
+      {
+        "rating": "4,1",
+        "User": "~andrzej",
+        "Model": "Skoda Roomster",
+        "Type": "Mikrovan 1.4 TDI 80KM 59kW",
+        "Comment": "Skodą Roomster 1.4 tdi jeżdżę ponad 6 lat.Przejechałem około 50000 tyś. kilometrów. Uważam że jest to bardzo praktyczny,tani w eksploatacji i niezawodny pojazd. Wnętrze zaprojektowane dla rodziny z dwojgiem niedużych dzieci lub dla małej firmy.Fotele łatwo się wyciąga i mamy ogromną przestrzeń bagażową. Wygodna pozycja za kierownicą. Dużo miejsca z przodu. Dobre fabryczne radio z możliwością połączenia z telefonem. Ogromny rynek tanich..."
+      },
+      {
+        "rating": "4,1",
+        "User": "~andrzej",
+        "Model": "Skoda Roomster",
+        "Type": "Mikrovan 1.4 TDI 80KM 59kW",
+        "Comment": "Skodą Roomster 1.4 tdi jeżdżę ponad 6 lat. Przejechałem około 50000 tyś. kilometrów. Uważam że jest to bardzo praktyczny, tani w eksploatacji i niezawodny pojazd. Wnętrze zaprojektowane dla rodziny z dwojgiem niedużych dzieci lub dla małej firmy. Fotele łatwo się wyciąga i mamy ogromną przestrzeń bagażową. Wygodna pozycja za kierownicą.Dużo miejsca z przodu. Dobre fabryczne radio z możliwością połączenia z telefonem. Ogromny rynek tanich..."
+      }
+    ]
+  },
+  "vehicleOffers":{
+    "price": {
+      "averagePrice": "90000",
+      "lowestPrice": "1200000",
+      "highestPrice": "60000"
+    },
+    "offer": {
+      "itemListElement": [
+        {
+          "priceSpecification": {
+            "price": "219900",
+            "priceCurrency": "PLN",
+            "url": "https://www.otomoto.pl/oferta/porsche-911-carrera-targa-3-6-boxer-320km-salon-pl-ID6BRkuy.html#2e83b13067"
+          },
+          "itemOffered": {
+            "type": "Car",
+            "name": "Porsche Cayenne",
+            "vehicleConfiguration": "Porsche Cayenne 3.0D 245KM Panorama, FV23%",
+            "brand": "Porsche",
+            "fuelType": "Diesel",
+            "modelDate": "2013",
+            "mileageFromOdometer": {
+              "@type": "QuantitativeValue",
+              "unitCode": "KMT",
+              "value": "57900"
+            }
+          }
+        }
+      ]
+    },
+    "offer": {
+      "itemListElement": [
+        {
+          "priceSpecification": {
+            "price": "219900",
+            "priceCurrency": "PLN",
+            "url": "https://www.otomoto.pl/oferta/porsche-911-carrera-targa-3-6-boxer-320km-salon-pl-ID6BRkuy.html#2e83b13067"
+          },
+          "itemOffered": {
+            "type": "Car",
+            "name": "Porsche Cayenne",
+            "vehicleConfiguration": "Porsche Cayenne 3.0D 245KM Panorama, FV23%",
+            "brand": "Porsche",
+            "fuelType": "Diesel",
+            "modelDate": "2013",
+            "mileageFromOdometer": {
+              "@type": "QuantitativeValue",
+              "unitCode": "KMT",
+              "value": "57900"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
