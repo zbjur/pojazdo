@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height">
-
+// //
     <TextView
         android:id="@+id/list_item_section_name"
         android:layout_width="wrap_content"
