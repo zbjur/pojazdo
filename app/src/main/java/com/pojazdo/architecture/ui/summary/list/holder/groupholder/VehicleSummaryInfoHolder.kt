@@ -4,10 +4,10 @@ import android.view.View
 import android.widget.RatingBar
 import android.widget.TextView
 import com.pojazdo.architecture.R
-import com.pojazdo.architecture.ui.summary.model.modelsection.VehicleMainInfoSections
+import com.pojazdo.architecture.ui.summary.model.modelsection.VehicleSummaryInfoSections
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder
 
-class VehicleMainInfoHolder(itemView: View?) : GroupViewHolder(itemView) {
+class VehicleSummaryInfoHolder(itemView: View?) : GroupViewHolder(itemView) {
 
     var vehicleBrandHeader: TextView? = null
     var vehicleModelHeader: TextView? = null
@@ -49,17 +49,17 @@ class VehicleMainInfoHolder(itemView: View?) : GroupViewHolder(itemView) {
         vehicleCommentsText = itemView?.findViewById(R.id.vehicle_comments_text)
     }
 
-    fun setVehicleMainInfo(vehicleMainInfoSections: VehicleMainInfoSections) {
-        vehicleBrandHeader?.text = vehicleMainInfoSections.brand
-        vehicleModelHeader?.text = vehicleMainInfoSections.model
-        vehicleProductionYearHeader?.text = vehicleMainInfoSections.yearOfProduction.toString()
-        vehicleAmountKmHeader?.text = vehicleMainInfoSections.lastMeterState
-        vehicleEngineSizeHeader?.text = vehicleMainInfoSections.engineCapacity
-        vehicleFuelTypeHeader?.text = vehicleMainInfoSections.fuel
-        vehicleVin?.text = vehicleMainInfoSections.vin
-        vehicleInsurance?.text = vehicleMainInfoSections.insurance
-        vehicleTechnicalExamination?.text = vehicleMainInfoSections.technicalExamination
-        vehicleLastMeterState?.text = vehicleMainInfoSections.lastMeterState
-        vehicleVinHeader?.text = vehicleMainInfoSections.vin
+    fun setVehicleSummaryInfo(vehicleSummaryInfoSections: VehicleSummaryInfoSections) {
+        vehicleBrandHeader?.text = vehicleSummaryInfoSections.brand
+        vehicleModelHeader?.text = vehicleSummaryInfoSections.model
+        vehicleProductionYearHeader?.text = vehicleSummaryInfoSections.yearOfProduction.toString()
+        vehicleAmountKmHeader?.text = vehicleSummaryInfoSections.lastMeterState
+        vehicleEngineSizeHeader?.text = vehicleSummaryInfoSections.engineCapacity
+        vehicleFuelTypeHeader?.text = vehicleSummaryInfoSections.fuel
+        vehicleVin?.text = vehicleSummaryInfoSections.vin
+        vehicleInsurance?.text = vehicleSummaryInfoSections.insurance
+        vehicleTechnicalExamination?.text = vehicleSummaryInfoSections.technicalExamination
+        vehicleLastMeterState?.text = vehicleSummaryInfoSections.lastMeterState
+        vehicleVinHeader?.text = vehicleSummaryInfoSections.vin
     }
 }

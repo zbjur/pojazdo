@@ -20,7 +20,7 @@ class TitleHeaderSectionHolder : GroupViewHolder {
     }
 
 
-    fun setText(title :String){
+    fun setGroupTitle(title :String){
         genreName?.text = title
     }
 

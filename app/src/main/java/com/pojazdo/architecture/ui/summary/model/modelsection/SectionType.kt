@@ -6,8 +6,8 @@ interface SectionType {
 
     enum class VehicleSectionType {
         VEHICLE_TITLE_GROUP,
-        VEHICLE_MAIN_INFO_GROUP,
+        VEHICLE_SUMMARY_INFO_GROUP,
         VEHICLE_PERSONAL_DATA_GROUP,
-        VEHICLE_MAP_GROUP
+        VEHICLE_MAP_GROUP///
     }
 }

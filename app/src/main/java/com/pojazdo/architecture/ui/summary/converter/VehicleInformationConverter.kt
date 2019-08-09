@@ -12,11 +12,11 @@ open class VehicleInformationConverter @Inject constructor() {
 
     private fun makeSections(vehicleInformation: VehicleInformation): MutableList<VehicleSections> {
         return mutableListOf(
-                makeVehicleMainInfoSubsection(vehicleInformation),
-                VehicleTitleSection("Historia Pojazdu ", makeVehicleHistorySubsection(vehicleInformation.timeLine), true),
+                makeVehicleSummaryInfoSubsection(vehicleInformation),
+                VehicleTitleSection("Oś czasu", makeVehicleHistorySubsection(vehicleInformation.timeLine), true),
                 VehicleTitleSection("Komentarze Użytkowników", makeVehicleRatingSubsection(vehicleInformation.vehicleRating), false),
                 VehicleTitleSection("Wartość Pojazdu", makeVehiclePriceSubsection(vehicleInformation.vehicleAveragePrice), false),
-                VehicleTitleSection("Podobne poazdy", makeVehicleAdsSubsection(vehicleInformation.vehicleOffers), true),
+                VehicleTitleSection("Podobne pojazdy", makeVehicleAdsSubsection(vehicleInformation.vehicleOffers), true),
                 // makeVehiclePersonalDataSubsection(vehicleInformation.vehicleAdditionalInformation),
                 makeVehiclePersonalDataSection(vehicleInformation),
                 makeVehicleMapSection(vehicleInformation.vehicleAdditionalInformation)
@@ -26,7 +26,7 @@ open class VehicleInformationConverter @Inject constructor() {
     private fun makeVehiclePersonalDataSection(vehicleInformation: VehicleInformation) =
             VehiclePersonalDataSection("", "", makeVehiclePersonalDataSubsection(vehicleInformation.vehicleAdditionalInformation), false)
 
-    private fun makeVehicleMainInfoSubsection(vehicleInformation: VehicleInformation) = VehicleMainInfoSections(
+    private fun makeVehicleSummaryInfoSubsection(vehicleInformation: VehicleInformation) = VehicleSummaryInfoSections(
             vehicleInformation.brand,
             vehicleInformation.model,
             vehicleInformation.yearOfProduction,
@@ -39,7 +39,10 @@ open class VehicleInformationConverter @Inject constructor() {
             vehicleInformation.engineCapacity,
             vehicleInformation.fuel,
             vehicleInformation.alternativeFuel,
-            true)
+            makeVehicleDetailsSubsection(vehicleInformation), false)
+
+    private fun makeVehicleDetailsSubsection(vehicleInformation: VehicleInformation?) = mutableListOf(
+            VehicleSubsection(VehicleDetailsInfoSections(vehicleInformation?.brand, vehicleInformation?.model)))
 
     private fun makeVehicleHistorySubsection(timeLine: List<TimeLine>?) =
             mutableListOf<VehicleSubsection>().apply {

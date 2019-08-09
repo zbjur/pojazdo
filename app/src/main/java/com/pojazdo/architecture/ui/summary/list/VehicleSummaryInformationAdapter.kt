@@ -7,9 +7,9 @@ import android.widget.LinearLayout
 import com.pojazdo.architecture.R
 import com.pojazdo.architecture.ui.summary.list.holder.childerholder.*
 import com.pojazdo.architecture.ui.summary.list.holder.groupholder.TitleHeaderSectionHolder
-import com.pojazdo.architecture.ui.summary.list.holder.groupholder.VehicleMainInfoHolder
 import com.pojazdo.architecture.ui.summary.list.holder.groupholder.VehicleMapHolder
 import com.pojazdo.architecture.ui.summary.list.holder.groupholder.VehiclePersonalDataGroupHolder
+import com.pojazdo.architecture.ui.summary.list.holder.groupholder.VehicleSummaryInfoHolder
 import com.pojazdo.architecture.ui.summary.model.modelsection.*
 import com.pojazdo.architecture.ui.summary.model.modelsubsection.*
 import com.thoughtbot.expandablerecyclerview.MultiTypeExpandableRecyclerViewAdapter
@@ -26,19 +26,20 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
 
         /*GROUP'S VIEW TYPES*/
         private const val VEHICLE_REGULAR_GROUP_VIEW_TYPE = 2
-        private const val VEHICLE_MAIN_INFO_GROUP_VIEW_TYPE = 3
+        private const val VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE = 3
         private const val VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE = 11
         private const val VEHICLE_MAP_VIEW_TYPE = 12
 
         /*CHILD'S VIEW TYPES*/
-        private const val VEHICLE_TIME_LINE_VIEW_TYPE = 4
-        private const val VEHICLE_OVERALL_RATING_VIEW_TYPE = 5
-        private const val VEHICLE_RATING_VIEW_TYPE = 6
-        private const val VEHICLE_ENGINE_RATING_VIEW_TYPE = 7
-        private const val VEHICLE_USER_RATING_VIEW_TYPE = 8
-        private const val VEHICLE_AD_VIEW_TYPE = 9
-        private const val VEHICLE_PRICE_OPTION_VIEW_TYPE = 10
-        private const val VEHICLE_PERSONAL_DATA_CHILD_VIEW_TYPE = 13
+        private const val VEHICLE_DETAILS_VIEW_TYPE = 4
+        private const val VEHICLE_TIME_LINE_VIEW_TYPE = 5
+        private const val VEHICLE_OVERALL_RATING_VIEW_TYPE = 6
+        private const val VEHICLE_RATING_VIEW_TYPE = 7
+        private const val VEHICLE_ENGINE_RATING_VIEW_TYPE = 8
+        private const val VEHICLE_USER_RATING_VIEW_TYPE = 9
+        private const val VEHICLE_AD_VIEW_TYPE = 10
+        private const val VEHICLE_PRICE_OPTION_VIEW_TYPE = 11
+        private const val VEHICLE_PERSONAL_DATA_CHILD_VIEW_TYPE = 14
     }
 
     private val viewPool = androidx.recyclerview.widget.RecyclerView.RecycledViewPool()
@@ -46,8 +47,8 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
     override fun onCreateGroupViewHolder(parent: ViewGroup?, viewType: Int): GroupViewHolder {
 
         return when (viewType) {
-            VEHICLE_MAIN_INFO_GROUP_VIEW_TYPE ->
-                VehicleMainInfoHolder(LayoutInflater.from(parent?.context).inflate(R.layout.vehicle_summary_item, parent, false))
+            VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE ->
+                VehicleSummaryInfoHolder(LayoutInflater.from(parent?.context).inflate(R.layout.vehicle_summary_item, parent, false))
             VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE ->
                 VehiclePersonalDataGroupHolder(LayoutInflater.from(parent?.context).inflate(R.layout.vehicle_personal_data_group_item, parent, false))
             VEHICLE_MAP_VIEW_TYPE ->
@@ -60,20 +61,22 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
 
     override fun onBindGroupViewHolder(holder: GroupViewHolder?, flatPosition: Int, group: ExpandableGroup<*>?) {
         when (getItemViewType(flatPosition)) {
-            VEHICLE_MAIN_INFO_GROUP_VIEW_TYPE ->
-                (holder as VehicleMainInfoHolder).setVehicleMainInfo(group as VehicleMainInfoSections)
+            VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE ->
+                (holder as VehicleSummaryInfoHolder).setVehicleSummaryInfo(group as VehicleSummaryInfoSections)
             VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE ->
                 (holder as VehiclePersonalDataGroupHolder).setPersonalData(group as VehiclePersonalDataSection)
             VEHICLE_MAP_VIEW_TYPE ->
                 (holder as VehicleMapHolder).setLocation(group as VehicleMapSection)
             else -> {
-                (holder as TitleHeaderSectionHolder).setText((group as VehicleTitleSection).title)
+                (holder as TitleHeaderSectionHolder).setGroupTitle((group as VehicleTitleSection).title)
             }
         }
     }
 
     override fun onCreateChildViewHolder(parent: ViewGroup?, viewType: Int): ChildViewHolder {
         return when (viewType) {
+            VEHICLE_DETAILS_VIEW_TYPE ->
+                VehicleDetailsInfoHolder(LayoutInflater.from(parent?.context).inflate(R.layout.vehicle_details_item, parent, false))
             VEHICLE_TIME_LINE_VIEW_TYPE ->
                 VehicleTimeLineHolder(LayoutInflater.from(parent?.context).inflate(R.layout.vehicle_timeline_item, parent, false))
             VEHICLE_OVERALL_RATING_VIEW_TYPE ->
@@ -101,6 +104,8 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
         val vehicleSubsection = (group as VehicleSections).items[childIndex]
 
         when (viewType) {
+            VEHICLE_DETAILS_VIEW_TYPE ->
+                (holder as VehicleDetailsInfoHolder).setVehicleDetailsInfo(vehicleSubsection.subsection as VehicleDetailsInfoSections)
             VEHICLE_TIME_LINE_VIEW_TYPE ->
                 (holder as VehicleTimeLineHolder).setTimeLine(vehicleSubsection.subsection as VehicleTimeLine)
             VEHICLE_OVERALL_RATING_VIEW_TYPE ->
@@ -129,7 +134,7 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
     override fun getGroupViewType(position: Int, group: ExpandableGroup<*>?): Int {
         return when ((group as VehicleSections).checkVehicleSectionType()) {
             SectionType.VehicleSectionType.VEHICLE_TITLE_GROUP -> VEHICLE_REGULAR_GROUP_VIEW_TYPE
-            SectionType.VehicleSectionType.VEHICLE_MAIN_INFO_GROUP -> VEHICLE_MAIN_INFO_GROUP_VIEW_TYPE
+            SectionType.VehicleSectionType.VEHICLE_SUMMARY_INFO_GROUP -> VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE
             SectionType.VehicleSectionType.VEHICLE_PERSONAL_DATA_GROUP -> VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE
             SectionType.VehicleSectionType.VEHICLE_MAP_GROUP -> VEHICLE_MAP_VIEW_TYPE
         }
@@ -138,7 +143,7 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
     override fun getChildViewType(position: Int, group: ExpandableGroup<*>?, childIndex: Int): Int {
         val vehicleSubsection = (group as VehicleSections).items[childIndex]
         return when (vehicleSubsection.checkVehicleSubSectionType()) {
-            SubSectionType.VehicleSubSectionType.VEHICLE_MAIN_INFO -> VEHICLE_MAIN_INFO_GROUP_VIEW_TYPE
+            SubSectionType.VehicleSubSectionType.VEHICLE_DETAILS_INFO -> VEHICLE_DETAILS_VIEW_TYPE
             SubSectionType.VehicleSubSectionType.VEHICLE_TIMELINE -> VEHICLE_TIME_LINE_VIEW_TYPE
             SubSectionType.VehicleSubSectionType.VEHICLE_ADS -> VEHICLE_AD_VIEW_TYPE
             SubSectionType.VehicleSubSectionType.VEHICLE_PRICE -> VEHICLE_PRICE_OPTION_VIEW_TYPE
@@ -153,13 +158,14 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
     override fun isGroup(viewType: Int): Boolean {
 
         return viewType == VEHICLE_REGULAR_GROUP_VIEW_TYPE ||
-                viewType == VEHICLE_MAIN_INFO_GROUP_VIEW_TYPE ||
+                viewType == VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE ||
                 viewType == VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE ||
                 viewType == VEHICLE_MAP_VIEW_TYPE
     }
 
     override fun isChild(viewType: Int): Boolean {
         return viewType == VEHICLE_AD_VIEW_TYPE ||
+                viewType == VEHICLE_DETAILS_VIEW_TYPE ||
                 viewType == VEHICLE_PRICE_OPTION_VIEW_TYPE ||
                 viewType == VEHICLE_OVERALL_RATING_VIEW_TYPE ||
                 viewType == VEHICLE_RATING_VIEW_TYPE ||

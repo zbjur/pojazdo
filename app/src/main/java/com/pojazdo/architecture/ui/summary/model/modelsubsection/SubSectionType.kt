@@ -5,7 +5,7 @@ interface SubSectionType {
     fun checkVehicleSubSectionType(): VehicleSubSectionType
 
     enum class VehicleSubSectionType {
-        VEHICLE_MAIN_INFO,
+        VEHICLE_DETAILS_INFO,
         VEHICLE_TIMELINE,
         VEHICLE_OVERALL_RATING,
         VEHICLE_RATING,

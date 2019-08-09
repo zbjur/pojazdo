@@ -13,16 +13,16 @@ abstract class BaseActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_search -> {
-             //   message.setText(R.string.title_search)
+             //   message.setGroupTitle(R.string.title_search)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_history -> {
-            //    message.setText(R.string.title_scan)
+            //    message.setGroupTitle(R.string.title_scan)
                 IntentIntegrator(this).initiateScan();
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_info -> {
-                //message.setText(R.string.title_history)
+                //message.setGroupTitle(R.string.title_history)
                 return@OnNavigationItemSelectedListener true
             }
         }
