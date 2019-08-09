@@ -18,6 +18,7 @@ public class ExpandCollapseController {
   public ExpandCollapseController(ExpandableList expandableList, ExpandCollapseListener listener) {
     this.expandableList = expandableList;
     this.listener = listener;
+
   }
 
   /**
@@ -28,8 +29,7 @@ public class ExpandCollapseController {
   private void collapseGroup(ExpandableListPosition listPosition) {
     expandableList.expandedGroupIndexes[listPosition.groupPos] = false;
     if (listener != null) {
-      listener.onGroupCollapsed(expandableList.getFlattenedGroupIndex(listPosition) + 1,
-          expandableList.groups.get(listPosition.groupPos).getItemCount());
+     listener.onGroupCollapsed(expandableList.getFlattenedGroupIndex(listPosition) + 1, expandableList.groups.get(listPosition.groupPos).getItemCount());
     }
   }
 
@@ -38,11 +38,10 @@ public class ExpandCollapseController {
    *
    * @param listPosition the group to be expanded
    */
-  private void expandGroup(ExpandableListPosition listPosition) {
+  public void expandGroup(ExpandableListPosition listPosition) {
     expandableList.expandedGroupIndexes[listPosition.groupPos] = true;
     if (listener != null) {
-      listener.onGroupExpanded(expandableList.getFlattenedGroupIndex(listPosition) + 1,
-          expandableList.groups.get(listPosition.groupPos).getItemCount());
+      listener.onGroupExpanded(expandableList.getFlattenedGroupIndex(listPosition) + 1, expandableList.groups.get(listPosition.groupPos).getItemCount());
     }
   }
 

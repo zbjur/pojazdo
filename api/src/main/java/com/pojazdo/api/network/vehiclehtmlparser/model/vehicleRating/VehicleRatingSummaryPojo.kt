@@ -20,6 +20,6 @@ data class VehicleRatingSummaryPojo (
 		@SerializedName("buyAgainPercentage") val buyAgainPercentage : String,
 		@SerializedName("buyAgainTitle") val buyAgainTitle : String,
 		@SerializedName("ratings") val ratingsPojo : List<RatingsPojo>,
-		@SerializedName("enginePojo") val enginePojo : List<EnginePojo>,
-		@SerializedName("userRatingPojos") val userRatingsPojo : List<UserRatingsPojo>
+		@SerializedName("engineRating") val enginePojo : List<EnginePojo>,
+		@SerializedName("userRatings") val userRatingsPojo : List<UserRatingsPojo>
 )

@@ -1,6 +1,7 @@
 package com.pojazdo.architecture.di.module
 
-import com.pojazdo.usecases.vehicleInformation.converter.VehicleInformationConverter
+
+import com.pojazdo.architecture.ui.summary.converter.VehicleInformationConverter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

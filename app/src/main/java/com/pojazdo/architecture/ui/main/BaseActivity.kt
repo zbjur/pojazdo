@@ -1,8 +1,8 @@
 package com.pojazdo.architecture.ui.main
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.pojazdo.architecture.R
 abstract class BaseActivity : AppCompatActivity() {

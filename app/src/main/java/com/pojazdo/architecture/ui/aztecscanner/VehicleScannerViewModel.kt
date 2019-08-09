@@ -3,28 +3,24 @@ package com.pojazdo.architecture.ui.aztecscanner
 import com.pojazdo.architecture.ui.Event
 import com.pojazdo.architecture.ui.base.Command
 import com.pojazdo.architecture.ui.base.ViewModelBase
-import com.pojazdo.api.network.vehicledecoder.model.VehicleDecodedInfo
-import com.pojazdo.usecases.vehicleaztecdecoder.VehicleDecoderApi
+
 import com.mobile.base.ApplicationScheduler
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
 
 class VehicleScannerViewModel : ViewModelBase {
     private val scheduler: ApplicationScheduler
-    private val vehicleDecoderApi: VehicleDecoderApi
 
     @Inject
-    constructor(scheduler: ApplicationScheduler, vehicleDecoderApi: VehicleDecoderApi) : super() {
+    constructor(scheduler: ApplicationScheduler) : super() {
         this.scheduler = scheduler
-        this.vehicleDecoderApi = vehicleDecoderApi
-
     }
 
     fun checkVehicle(registerNumber: String, vin: String, registrationDate: String) {
         showVehicleResult(registerNumber, vin, registrationDate)
     }
 
-    fun decodeAztecCode(aztec: String, uniqueKey: String, date: String) {
+/*    fun decodeAztecCode(aztec: String, uniqueKey: String, date: String) {
         showProgress()
         scheduler.schedule(vehicleDecoderApi.decodeAztecCode(aztec, uniqueKey, date),
                 Consumer {
@@ -37,7 +33,7 @@ class VehicleScannerViewModel : ViewModelBase {
     private fun handleResponse(it: VehicleDecodedInfo) {
         hideProgress()
         showVehicleDecodedInfo(it.registrationNumber, it.vin, it.firstRegistrationDate)
-    }
+    }*/
 
     private fun handleResponseError(it: Throwable) {
         viewState.postValue(Event(Command.Error(it.message)))

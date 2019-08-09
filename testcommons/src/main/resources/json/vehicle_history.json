@@ -26,43 +26,43 @@
 
   "timeLine": [{
     "key": "Całokształt",
-    "value": "3,90",
+    "description": "3,90",
     "timeLine": [
       {
         "key": "Całokształt",
-        "value": "3,90"
+        "description": "3,90"
       },
       {
         "key": "Całokształt",
-        "value": "3,90"
+        "description": "3,90"
       },
       {
         "key": "Całokształt",
-        "value": "3,90"
+        "description": "3,90"
       },
       {
         "key": "Całokształt",
-        "value": "3,90"
+        "description": "3,90"
       }
     ]},
     {
       "key": "Całokształt",
-      "value": "3,90",
+      "description": "3,90",
       "timeLine": [
         {
           "key": "Całokształt",
-          "value": "3,90"
+          "description": "3,90"
         },
         {
           "key": "Całokształt",
-          "value": "3,90"
+          "description": "3,90"
         },
         {
           "key": "Całokształt",
-          "value": "3,90"
+          "description": "3,90"
         },
         {
           "key": "Całokształt",
-          "value": "3,90"
+          "description": "3,90"
         }
       ]}]}

@@ -12,7 +12,6 @@
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="title_activity_vehicle_summary">VehicleSummary</string>
-    <string name="title_activity_summary">SummaryActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
@@ -39,4 +38,5 @@
     <string name="tv_ep_title">S05 Ep16 Granite State</string>
     <string name="tv_rating">4.3/5</string>
     <string name="_2011">2011</string>
+    <string name="go_to_map">Mapa</string>
 </resources>

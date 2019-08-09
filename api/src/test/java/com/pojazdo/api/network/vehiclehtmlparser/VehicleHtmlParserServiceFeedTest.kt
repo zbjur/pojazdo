@@ -9,6 +9,7 @@ import org.assertj.core.api.Assertions
 import org.junit.Before
 import org.junit.Test
 
+
 class VehicleHtmlParserServiceFeedTest {
 
     val server = MockWebServer()
@@ -48,6 +49,7 @@ class VehicleHtmlParserServiceFeedTest {
 
     @Test
     fun parseVehicleRatingHtmlResponse() {
+
         enqueueResponse("json/vehicle_rating_summary.json")
         val response = systemUnderTest.parseVehicleRatingHtmlResponse(serverUrl, htmlVehicleRatingSummaryResponse).test()
 
@@ -76,4 +78,6 @@ class VehicleHtmlParserServiceFeedTest {
                 .setResponseCode(200)
         server.enqueue(mockResponse)
     }
+
+
 }

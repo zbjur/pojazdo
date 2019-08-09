@@ -11,7 +11,7 @@ public class TestDataFactory {
     ArrayList list = new ArrayList();
     for (int i = 0; i < 6; i++) {
       List items = Arrays.asList(i + ".0", i + ".1", i + ".2");
-      list.add(new ExpandableGroup("Section " + i, items));
+      list.add(new ExpandableGroup("Section " + i, items,true));
     }
     return list;
   }

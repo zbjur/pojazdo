@@ -26,7 +26,6 @@ class VehicleHtmlParserServiceFeed @Inject constructor(client: OkHttpClient) : D
         print("parseVehicleRatingHtmlResponse${Thread.currentThread().name}")
         val jsonStringResponse = Resources.toString(Resources.getResource("json/vehicle_rating_summary.json"), Charsets.UTF_8)
         val gson = Gson()
-        /*   val jsonString = gson.toJson(jsonStringResponse)*/
         val listType = object : TypeToken<VehicleRatingSummaryPojo>() { }.type
         val response = gson.fromJson<VehicleRatingSummaryPojo>(jsonStringResponse, listType)
         return Single.just(response)

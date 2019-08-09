@@ -10,7 +10,7 @@ ext {
             minSdkVersion            : 19,
             compileSdkVersion        : 28,
             targetSdkVersion         : 28,
-            testInstrumentationRunner: 'android.support.test.runner.AndroidJUnitRunner'
+            testInstrumentationRunner: 'androidx.test.runner.AndroidJUnitRunner'
     ]
 
     // App
@@ -90,7 +90,7 @@ ext {
             cardView                : "com.android.support:cardview-v7:$support_library_version",
             multidex                : "com.android.support:multidex:$mutlidex_version",
             chromecast              : "com.android.support:mediarouter-v7:$support_library_version",
-            constraintLayout        : "com.android.support.constraint:constraint-layout:$constraint_version",
+            constraintLayout        : "androidx.constraintlayout:constraintlayout:$constraint_version",
             chromecastPlayServices  : "com.google.android.gms:play-services-cast-framework:$play_services_cast_version",
             locationPlayServices    : "com.google.android.gms:play-services-location:$play_services_location_version",
             playBilling             : "com.android.billingclient:billing:$play_billing_version",

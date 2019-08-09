@@ -1,6 +1,6 @@
 package com.thoughtbot.expandablerecyclerview;
 
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.ViewGroup;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableList;
@@ -152,4 +152,6 @@ public abstract class MultiTypeExpandableRecyclerViewAdapter<GVH extends GroupVi
   public boolean isChild(int viewType) {
     return viewType == ExpandableListPosition.CHILD;
   }
+
+  public abstract void onExpandSelectedGroup(ExpandableGroup groupType);
 }

@@ -1,65 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/rating_vehicle_points"
+        android:id="@+id/vehicle_rating_type_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="4,6"
+        android:layout_marginBottom="4dp"
         android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Wrażenia" />
 
     <RatingBar
-        android:id="@+id/vehicle_rating"
+        android:id="@+id/vehicle_rating_bar"
         style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:progressTint="#D35D44"
-        android:rating="4.6"
-        app:layout_constraintStart_toEndOf="@+id/rating_vehicle_points"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/rating_vehicle_brand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Skoda"
-        android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintHorizontal_bias="0.583"
-        app:layout_constraintStart_toEndOf="@+id/vehicle_rating"
+        android:layout_marginBottom="4dp"
+        android:progressTint="#D35D44"
+        android:rating="4.6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vehicle_rating_points"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/rating_car_model"
+        android:id="@+id/vehicle_rating_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Roomster"
-        app:layout_constraintStart_toEndOf="@+id/rating_vehicle_brand"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/rating_vehicle_comment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_vehicle_points" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="4,6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

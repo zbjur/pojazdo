@@ -1,7 +1,7 @@
 package com.pojazdo.architecture.ui.main
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 class NavigationModelView : ViewModel() {
 
