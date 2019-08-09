@@ -1,6 +1,6 @@
 package com.pojazdo.architecture.ui.history
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_item.view.*
 class MyItemRecyclerViewAdapter(
         private val mValues: List<DummyItem>,
         private val mListener: OnListFragmentInteractionListener?)
-    : RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener
 
@@ -53,8 +53,8 @@ class MyItemRecyclerViewAdapter(
 
     override fun getItemCount(): Int = mValues.size
 
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val mIdView: TextView = mView.rating_vehicle_brand
+    inner class ViewHolder(val mView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(mView) {
+        val mIdView: TextView = mView.average_vehicle_rating
         val mContentView: TextView = mView.content
 
         override fun toString(): String {

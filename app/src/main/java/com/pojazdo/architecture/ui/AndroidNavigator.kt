@@ -1,14 +1,14 @@
 package com.pojazdo.architecture.ui
 
 import android.content.Context
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import com.pojazdo.architecture.ui.application.Navigator
 import com.pojazdo.architecture.ui.summary.VehicleSummaryActivity
 import javax.inject.Inject
 
 class AndroidNavigator @Inject constructor() : Navigator {
 
-    override fun openScanner(fragment: Fragment) {
+    override fun openScanner(fragment: androidx.fragment.app.Fragment) {
    /*     val integrator = IntentIntegrator.forSupportFragment(fragment)
         integrator.apply {
             setDesiredBarcodeFormats(IntentIntegrator)

@@ -11,10 +11,12 @@ import java.util.List;
 public class ExpandableGroup<T extends Parcelable> implements Parcelable {
   private String title;
   private List<T> items;
+  private boolean hasInitExpandableState;
 
-  public ExpandableGroup(String title, List<T> items) {
+  public ExpandableGroup(String title, List<T> items, boolean hasInitExpandableState) {
     this.title = title;
     this.items = items;
+    this.hasInitExpandableState = hasInitExpandableState;
   }
 
   public String getTitle() {
@@ -27,6 +29,10 @@ public class ExpandableGroup<T extends Parcelable> implements Parcelable {
 
   public int getItemCount() {
     return items == null ? 0 : items.size();
+  }
+
+  public  boolean hasInitExpandableState(){
+    return hasInitExpandableState;
   }
 
   @Override

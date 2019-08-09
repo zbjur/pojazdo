@@ -6,3 +6,5 @@ Feature: Login screen to authenticate users
           And I introduce an valid registration number
           And I introduce an valid first registration date
           And I press the search
+          Then Vehicle summary information is displayed
+

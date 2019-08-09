@@ -1,7 +1,7 @@
 package com.pojazdo.architecture.ui.platform
 
-import android.arch.lifecycle.ViewModelProvider
-import android.support.v7.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
 import com.pojazdo.architecture.di.ApplicationComponent
 import com.pojazdo.architecture.ui.PojazdoApplication
 import com.pojazdo.architecture.ui.application.Navigator

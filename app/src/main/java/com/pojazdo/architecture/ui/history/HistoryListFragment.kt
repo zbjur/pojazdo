@@ -2,15 +2,10 @@ package com.pojazdo.architecture.ui.history
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pojazdo.architecture.R
-
 import com.pojazdo.architecture.ui.history.dummy.DummyContent
 import com.pojazdo.architecture.ui.history.dummy.DummyContent.DummyItem
 
@@ -19,7 +14,7 @@ import com.pojazdo.architecture.ui.history.dummy.DummyContent.DummyItem
  * Activities containing this fragment MUST implement the
  * [HistoryListFragment.OnListFragmentInteractionListener] interface.
  */
-class HistoryListFragment : Fragment() {
+class HistoryListFragment : androidx.fragment.app.Fragment() {
 
     // TODO: Customize parameters
     private var columnCount = 1
@@ -39,11 +34,11 @@ class HistoryListFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_item_list, container, false)
 
         // Set the adapter
-        if (view is RecyclerView) {
+        if (view is androidx.recyclerview.widget.RecyclerView) {
             with(view) {
                 layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
+                    columnCount <= 1 -> androidx.recyclerview.widget.LinearLayoutManager(context)
+                    else -> androidx.recyclerview.widget.GridLayoutManager(context, columnCount)
                 }
                 adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS, listener)
             }

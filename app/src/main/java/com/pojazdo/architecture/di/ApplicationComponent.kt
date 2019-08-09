@@ -13,7 +13,8 @@ import javax.inject.Singleton
     ViewModelModule::class,
     ServiceModule::class,
     ConverterModule::class,
-    NetworkModule::class])
+    NetworkModule::class,
+    DatabaseModule::class])
 interface ApplicationComponent {
     fun inject(application: PojazdoApplication)
     fun inject(formFragment: FormFragment)

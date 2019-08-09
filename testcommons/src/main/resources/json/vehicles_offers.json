@@ -28,7 +28,7 @@
           "mileageFromOdometer": {
             "@type": "QuantitativeValue",
             "unitCode": "KMT",
-            "value": "57900"
+            "description": "57900"
           }
         }
       }
@@ -55,7 +55,7 @@
           "mileageFromOdometer": {
             "@type": "QuantitativeValue",
             "unitCode": "KMT",
-            "value": "57900"
+            "description": "57900"
           }
         }
       }
@@ -82,7 +82,7 @@
           "mileageFromOdometer": {
             "@type": "QuantitativeValue",
             "unitCode": "KMT",
-            "value": "57900"
+            "description": "57900"
           }
         }
       }

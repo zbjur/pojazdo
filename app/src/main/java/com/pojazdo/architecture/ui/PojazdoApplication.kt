@@ -2,8 +2,9 @@ package com.pojazdo.architecture.ui
 
 import android.app.Application
 import com.pojazdo.architecture.di.ApplicationComponent
-import com.pojazdo.architecture.di.module.ApplicationModule
 import com.pojazdo.architecture.di.DaggerApplicationComponent
+import com.pojazdo.architecture.di.module.ApplicationModule
+import com.pojazdo.architecture.di.module.DatabaseModule
 
 class PojazdoApplication : Application() {
 
@@ -11,6 +12,7 @@ class PojazdoApplication : Application() {
         DaggerApplicationComponent
                 .builder()
                 .applicationModule(ApplicationModule(this))
+                .databaseModule(DatabaseModule(this))
                 .build()
     }
 

@@ -14,7 +14,7 @@ data class VehicleHistoryPojo (
 		@SerializedName("capacity") val capacity : String,
 		@SerializedName("fuel") val fuel : String,
 		@SerializedName("alternativeFuel") val alternativeFuel : String,
-		@SerializedName("technicalDataPojo") val technicalDataPojo : TechnicalDataPojo,
-		@SerializedName("documentsPojo") val documentsPojo : DocumentsPojo,
-		@SerializedName("timeLinePojo") val timeLinePojo : List<TimeLinePojo>
+		@SerializedName("technicalData") val technicalDataPojo : TechnicalDataPojo,
+		@SerializedName("documents") val documentsPojo : DocumentsPojo,
+		@SerializedName("timeLine") val timeLinePojo : List<TimeLinePojo>
 )

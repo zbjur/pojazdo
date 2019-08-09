@@ -1,18 +1,19 @@
 package com.pojazdo.steps
 
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.action.ViewActions.typeText
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.intent.Intents
-import android.support.test.espresso.intent.matcher.IntentMatchers
-import android.support.test.espresso.intent.rule.IntentsTestRule
-import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.rule.ActivityTestRule
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.intent.Intents
+import androidx.test.espresso.intent.matcher.IntentMatchers
+import androidx.test.espresso.intent.rule.IntentsTestRule
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.rule.ActivityTestRule
 import com.mauriciotogneri.greencoffee.GreenCoffeeSteps
 import com.mauriciotogneri.greencoffee.annotations.And
 import com.mauriciotogneri.greencoffee.annotations.Given
+import com.mauriciotogneri.greencoffee.annotations.Then
 import com.mauriciotogneri.greencoffee.annotations.When
 import com.pojazdo.architecture.R
 import com.pojazdo.architecture.ui.summary.VehicleSummaryActivity
@@ -37,18 +38,24 @@ class StartUpStep : GreenCoffeeSteps() {
         onView(withId(R.id.vinNumber)).perform(typeText("FSSRW535WRSFA"))
     }
 
-    @When("^I introduce an valid registration number$")
+    @And("^I introduce an valid registration number$")
     fun iIntroduceAnValidRegistraionNumber() {
         onView(withId(R.id.registerNumber)).perform(typeText("SCI 4666"))
     }
 
-    @When("^I introduce an valid first registration date$")
+    @And("^I introduce an valid first registration date$")
     fun iIntroduceAnValidRegistraiotnDate() {
         onView(withId(R.id.registerDate)).perform(typeText("12.12.2018"))
     }
 
     @And("^I press the search$")
-    fun andIPressTheSearch() {
+    fun iPressTheSearch() {
+        onView(withId(R.id.registerDate)).perform(click())
+        loginTestRule.launchActivity(null)
+    }
+
+    @Then("^Vehicle summary information is displayed$")
+    fun isSeeVehicleSummary() {
         onView(withId(R.id.registerDate)).perform(click())
         loginTestRule.launchActivity(null)
     }

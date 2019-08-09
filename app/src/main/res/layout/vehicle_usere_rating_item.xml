@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/vehicle_rating_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="4,6" />
+
+    <RatingBar
+        android:id="@+id/vehicle_rating_bar"
+        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:progressTint="#D35D44"
+        app:layout_constraintStart_toEndOf="@+id/vehicle_rating_points"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:rating="4.6" />
+
+    <TextView
+        android:id="@+id/vehicle_rating_brand_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintStart_toEndOf="@+id/vehicle_rating_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Skoda Roomster" />
+
+    <TextView
+        android:id="@+id/vehicle_rating_model_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_rating_bar"
+        tools:text="Microvan 1.9 TDI 105KM 77KW" />
+
+
+    <TextView
+        android:id="@+id/rating_vehicle_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_rating_model_type"
+        tools:text="auto jest idealne dla rodziny z dwojgiem dzieci ,przy trujce ciut mało miejsca na 3 foteliki z tyłu,poza tym sprawuje się rewelacyjnie na karzdej nawieszchni ,jest pakowny i dynamiczny nawet przy pełnym załadunku gorąco polecam zakup tego modelu skody ,sam czekam na nowszy model roomstera ktury ma wyjćś w 2014 roku." />
+</androidx.constraintlayout.widget.ConstraintLayout>
