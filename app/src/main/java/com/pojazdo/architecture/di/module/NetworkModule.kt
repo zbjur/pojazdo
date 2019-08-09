@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.mockwebserver.MockWebServer
 import java.util.concurrent.TimeUnit
 
 @Module
@@ -28,4 +29,9 @@ class NetworkModule {
             }
         }.build()
     }
+
+
+
+    @Provides
+    fun provideMockWebServer() = MockWebServer()
 }

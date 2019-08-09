@@ -1,7 +1,7 @@
 package com.pojazdo.architecture.di.module
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.pojazdo.architecture.di.ViewModelFactory
 import com.pojazdo.architecture.di.ViewModelKey
 import com.pojazdo.architecture.ui.aztecscanner.VehicleScannerViewModel

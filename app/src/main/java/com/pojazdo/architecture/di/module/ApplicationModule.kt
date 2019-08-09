@@ -1,9 +1,9 @@
 package com.pojazdo.architecture.di.module
 
 import android.content.Context
-import com.pojazdo.architecture.ui.PojazdoApplication
 import com.mobile.base.AndroidScheduler
 import com.mobile.base.ApplicationScheduler
+import com.pojazdo.architecture.ui.PojazdoApplication
 import dagger.Module
 import dagger.Provides
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,7 +17,7 @@ open class ApplicationModule(private val application: PojazdoApplication) {
     @Provides
     open fun provideApplicationContext(): Context = application
 
-      @Singleton
-      @Provides
-      open fun providesAndroidScheduler(): ApplicationScheduler = AndroidScheduler(AndroidSchedulers.mainThread(), Schedulers.io())
+    @Singleton
+    @Provides
+    open fun providesAndroidScheduler(): ApplicationScheduler = AndroidScheduler(AndroidSchedulers.mainThread(), Schedulers.io())
 }

@@ -1,8 +1,8 @@
 package com.pojazdo.architecture.ui.history
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
 import com.pojazdo.architecture.R
 
 import kotlinx.android.synthetic.main.activity_history.*

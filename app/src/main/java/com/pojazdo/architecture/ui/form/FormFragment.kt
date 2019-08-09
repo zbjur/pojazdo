@@ -1,7 +1,7 @@
 package com.pojazdo.architecture.ui.form
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -71,7 +71,7 @@ class FormFragment : BaseFragment() {
         IntentIntegrator.parseActivityResult(requestCode, resultCode, data).apply {
             Toast.makeText(context, "onActivityResult " + toString(), Toast.LENGTH_SHORT).show()
             System.out.println("scan result :  ${toString()}")
-            vehicleScannerViewModel.decodeAztecCode("", "", "")
+            //vehicleScannerViewModel.decodeAztecCode("", "", "")
         }
     }
 

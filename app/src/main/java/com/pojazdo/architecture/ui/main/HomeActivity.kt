@@ -1,12 +1,11 @@
 package com.pojazdo.architecture.ui.main
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pojazdo.architecture.R
 import com.pojazdo.architecture.ui.form.FormFragment
 import com.pojazdo.architecture.ui.history.HistoryListFragment
@@ -49,7 +48,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return false
     }
 
-    fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .commit()

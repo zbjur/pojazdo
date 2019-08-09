@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 package com.pojazdo.architecture.ui.platform
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,11 +26,11 @@ import com.pojazdo.architecture.ui.application.Navigator
 import javax.inject.Inject
 
 /**
- * Base Fragment class with helper methods for handling views and back button events.
+ * Base Fragment class with helper methods for handling views and back button descriptions.
  *
  * @see Fragment
  */
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : androidx.fragment.app.Fragment() {
 
     abstract fun layoutId(): Int
 
