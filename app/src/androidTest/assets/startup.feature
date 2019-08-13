@@ -1,10 +1,11 @@
-Feature: Login screen to authenticate users
+Feature: Show vehicle information
 
-	Scenario: Main screen shown
+	Scenario: Show vehicle vehicle details
         Given I see an empty search form
          When I introduce an valid vin
           And I introduce an valid registration number
           And I introduce an valid first registration date
           And I press the search
-          Then Vehicle summary information is displayed
+          Then I see vehicle rating
+
 

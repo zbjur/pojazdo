@@ -5,7 +5,7 @@ import com.mauriciotogneri.greencoffee.GreenCoffeeConfig
 import com.mauriciotogneri.greencoffee.GreenCoffeeTest
 import com.mauriciotogneri.greencoffee.ScenarioConfig
 import com.pojazdo.architecture.ui.main.HomeActivity
-import com.pojazdo.steps.StartUpStep
+import com.pojazdo.steps.VehicleSummaryRobot
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,7 +21,7 @@ class StartUpFeatureFeatureTest(scenarioConfig: ScenarioConfig) : GreenCoffeeTes
 
     @Test
     fun test() {
-        start(StartUpStep())
+        start(VehicleSummaryRobot())
     }
 
     companion object {
