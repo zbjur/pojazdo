@@ -30,24 +30,24 @@ class VehicleDetailsInfoHolder(itemView: View?) : ChildViewHolder(itemView) {
     var vehicleCommentsText: TextView? = null
 
     init {
-  /*      vehicleBrandHeader = itemView?.findViewById(R.id.vehicle_brand)
-        vehicleModelHeader = itemView?.findViewById(R.id.vehicle_model)
-        vehicleProductionYearHeader = itemView?.findViewById(R.id.vehicle_production_year)
-        vehicleAmountKmHeader = itemView?.findViewById(R.id.vehicle_last_meter_state)
-        vehicleEngineSizeHeader = itemView?.findViewById(R.id.vehicle_engine_capacity_header)
-        vehicleFuelTypeHeader = itemView?.findViewById(R.id.vehicle_fuel_type)
-        vehicleRatingNumber = itemView?.findViewById(R.id.vehicle_rating_number)
-        vehicleRating = itemView?.findViewById(R.id.vehicle_rating_bar)
-        vehicleCommentsNumber = itemView?.findViewById(R.id.vehicle_comments_number)
+  /*      vehicleBrandHeader = itemView?.findViewById(R.sellerId.vehicle_brand)
+        vehicleModelHeader = itemView?.findViewById(R.sellerId.vehicle_model)
+        vehicleProductionYearHeader = itemView?.findViewById(R.sellerId.vehicle_production_year)
+        vehicleAmountKmHeader = itemView?.findViewById(R.sellerId.vehicle_last_meter_state)
+        vehicleEngineSizeHeader = itemView?.findViewById(R.sellerId.vehicle_engine_capacity_header)
+        vehicleFuelTypeHeader = itemView?.findViewById(R.sellerId.vehicle_fuel_type)
+        vehicleRatingNumber = itemView?.findViewById(R.sellerId.vehicle_rating_number)
+        vehicleRating = itemView?.findViewById(R.sellerId.vehicle_rating_bar)
+        vehicleCommentsNumber = itemView?.findViewById(R.sellerId.vehicle_comments_number)
 
-        vehicleVin = itemView?.findViewById(R.id.vehicle_vin)
-        vehicleInsuranceHeader = itemView?.findViewById(R.id.vehicle_insurance_header)
-        vehicleInsurance = itemView?.findViewById(R.id.vehicle_insurance)
-        vehicleTechnicalExaminationHeader = itemView?.findViewById(R.id.technical_examination_header)
-        vehicleTechnicalExamination = itemView?.findViewById(R.id.technical_examination)
-        vehicleLastMeterStateHeader = itemView?.findViewById(R.id.vehicle_last_meter_state)
-        vehicleLastMeterState = itemView?.findViewById(R.id.vehicle_last_meter_state)
-        vehicleCommentsText = itemView?.findViewById(R.id.vehicle_comments_text)*/
+        vehicleVin = itemView?.findViewById(R.sellerId.vehicle_vin)
+        vehicleInsuranceHeader = itemView?.findViewById(R.sellerId.vehicle_insurance_header)
+        vehicleInsurance = itemView?.findViewById(R.sellerId.vehicle_insurance)
+        vehicleTechnicalExaminationHeader = itemView?.findViewById(R.sellerId.technical_examination_header)
+        vehicleTechnicalExamination = itemView?.findViewById(R.sellerId.technical_examination)
+        vehicleLastMeterStateHeader = itemView?.findViewById(R.sellerId.vehicle_last_meter_state)
+        vehicleLastMeterState = itemView?.findViewById(R.sellerId.vehicle_last_meter_state)
+        vehicleCommentsText = itemView?.findViewById(R.sellerId.vehicle_comments_text)*/
     }
 
     fun setVehicleDetailsInfo(vehicleSummaryInfoSections: VehicleDetailsInfoSections) {

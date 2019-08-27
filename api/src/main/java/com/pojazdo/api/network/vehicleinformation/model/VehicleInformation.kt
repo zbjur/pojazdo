@@ -1,6 +1,7 @@
 package com.pojazdo.api.network.vehicleinformation.model
 import com.google.gson.annotations.SerializedName
 import com.pojazdo.api.database.vehicleadditionalinformation.model.VehicleAdditionalInformation
+import com.pojazdo.api.database.vehicleadditionalinformation.model.VehicleAndSellerInformation
 import com.pojazdo.api.network.vehicleinformation.model.*
 
 
@@ -24,5 +25,5 @@ class VehicleInformation constructor(
         @SerializedName("vehicleAveragePrice") val vehicleAveragePrice: VehicleAveragePrice,
         @SerializedName("vehicleOffers") val vehicleOffers: List<VehicleOffers>)
 {
-    var vehicleAdditionalInformation: VehicleAdditionalInformation? = null
+    var vehicleAndSellerInformation: VehicleAndSellerInformation? = null
 }

@@ -5,7 +5,7 @@ import com.mauriciotogneri.greencoffee.GreenCoffeeConfig
 import com.mauriciotogneri.greencoffee.GreenCoffeeTest
 import com.mauriciotogneri.greencoffee.ScenarioConfig
 import com.pojazdo.architecture.ui.main.HomeActivity
-import com.pojazdo.steps.VehicleSummaryRobot
+import com.pojazdo.steps.CheckVehicleStep
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,7 +21,7 @@ class StartUpFeatureFeatureTest(scenarioConfig: ScenarioConfig) : GreenCoffeeTes
 
     @Test
     fun test() {
-        start(VehicleSummaryRobot())
+        start(CheckVehicleStep())
     }
 
     companion object {
@@ -30,7 +30,7 @@ class StartUpFeatureFeatureTest(scenarioConfig: ScenarioConfig) : GreenCoffeeTes
         @JvmStatic
         fun scenarios(): Iterable<ScenarioConfig> {
             return GreenCoffeeConfig() // folder to place the screenshot if a test fails
-                    .withFeatureFromAssets("assets/startup.feature")
+                    .withFeatureFromAssets("assets/CheckVehicle.feature")
                     .scenarios(Locale("en", "GB"))
         }
     }

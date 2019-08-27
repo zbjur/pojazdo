@@ -1,6 +1,8 @@
 package com.pojazdo.architecture.ui.summary.converter
 
+import com.pojazdo.api.database.vehicleadditionalinformation.model.Seller
 import com.pojazdo.api.database.vehicleadditionalinformation.model.VehicleAdditionalInformation
+import com.pojazdo.api.database.vehicleadditionalinformation.model.VehicleAndSellerInformation
 import com.pojazdo.api.network.vehicleinformation.model.*
 import com.pojazdo.architecture.ui.summary.model.modelsection.*
 import com.pojazdo.architecture.ui.summary.model.modelsubsection.*
@@ -10,6 +12,9 @@ open class VehicleInformationConverter @Inject constructor() {
 
     fun convertToVehicleSectionList(vehicleInformation: VehicleInformation) = makeSections(vehicleInformation)
 
+    fun makeEmptySection() = mutableListOf<VehicleSections>(VehicleSummaryInfoSections("","",1,"","","","",
+            "","","","","", emptyList(),true))
+
     private fun makeSections(vehicleInformation: VehicleInformation): MutableList<VehicleSections> {
         return mutableListOf(
                 makeVehicleSummaryInfoSubsection(vehicleInformation),
@@ -17,14 +22,19 @@ open class VehicleInformationConverter @Inject constructor() {
                 VehicleTitleSection("Komentarze Użytkowników", makeVehicleRatingSubsection(vehicleInformation.vehicleRating), false),
                 VehicleTitleSection("Wartość Pojazdu", makeVehiclePriceSubsection(vehicleInformation.vehicleAveragePrice), false),
                 VehicleTitleSection("Podobne pojazdy", makeVehicleAdsSubsection(vehicleInformation.vehicleOffers), true),
-                // makeVehiclePersonalDataSubsection(vehicleInformation.vehicleAdditionalInformation),
                 makeVehiclePersonalDataSection(vehicleInformation),
-                makeVehicleMapSection(vehicleInformation.vehicleAdditionalInformation)
+                makeVehicleMapSection(vehicleInformation.vehicleAndSellerInformation)
         )
     }
 
-    private fun makeVehiclePersonalDataSection(vehicleInformation: VehicleInformation) =
-            VehiclePersonalDataSection("", "", makeVehiclePersonalDataSubsection(vehicleInformation.vehicleAdditionalInformation), false)
+   private fun makeVehiclePersonalDataSection(vehicleInformation: VehicleInformation) =
+            VehiclePersonalDataSection("", "", makeVehiclePersonalDataSubsection(vehicleInformation.vehicleAndSellerInformation), false)
+
+    fun getVehiclePersonalDataSection(groupList: MutableList<VehicleSections>?, seller: Seller): MutableList<VehicleSections>? {
+        val vehiclePersonalDataSection = VehiclePersonalDataSection(seller.city, seller.street, emptyList(), false)
+        return groupList?.apply { set(5, vehiclePersonalDataSection) }
+    }
+
 
     private fun makeVehicleSummaryInfoSubsection(vehicleInformation: VehicleInformation) = VehicleSummaryInfoSections(
             vehicleInformation.brand,
@@ -82,20 +92,17 @@ open class VehicleInformationConverter @Inject constructor() {
 
     private fun makeVehicleAdsList(vehicleOffersList: List<VehicleOffers>?) = mutableListOf<VehicleAd>().apply {
         vehicleOffersList?.forEach {
-            add(VehicleAd(it.brand, it.name, it.imgaeUrl, it.htmlUrl, it.vehicleConfiguration, it.price))
+            add(VehicleAd(it.brand, it.name, it.imgaeUrl, it.htmlUrl, it.vehicleConfiguration, "3"))
         }
     }
 
-    private fun makeVehiclePersonalDataSubsection(vehicleAdditionalInformation: VehicleAdditionalInformation?) = mutableListOf(
-            VehicleSubsection(VehiclePersonalDataSubSection(
-                    vehicleAdditionalInformation?.email,
-                    vehicleAdditionalInformation?.phoneNumber)))
+    private fun makeVehiclePersonalDataSubsection(vehicleAdditionalInformation: VehicleAndSellerInformation?) = mutableListOf(
+            VehicleSubsection(VehiclePersonalDataSubSection("","")))
 
 
-    private fun makeVehicleMapSection(vehicleAdditionalInformation: VehicleAdditionalInformation?) =
-            VehicleMapSection(
-                    vehicleAdditionalInformation?.latitiude,
-                    vehicleAdditionalInformation?.latitiude,
+    private fun makeVehicleMapSection(vehicleAdditionalInformation: VehicleAndSellerInformation?) =
+            VehicleMapSection(1.1,
+                    1.1,
                     true)
 
 }

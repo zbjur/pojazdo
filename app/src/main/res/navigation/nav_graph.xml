@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vehicleSummaryFragment">
+
+    <fragment
+        android:id="@+id/vehicleSummaryFragment"
+        android:name="com.pojazdo.architecture.ui.summary.VehicleSummaryFragment"
+        android:label="VehicleSummaryFragment" >
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_editSellerDataFragment"
+            app:destination="@id/editSellerDataFragment" />
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_editSellerDataFragment2"
+            app:destination="@id/editSellerDataFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_vehicleSummaryFragment" app:destination="@id/vehicleSummaryFragment" />
+    <fragment
+        android:id="@+id/editSellerDataFragment"
+        android:name="com.pojazdo.architecture.ui.summary.editseller.EditSellerDataFragment"
+        android:label="edit_seller_data_fragment"
+        tools:layout="@layout/edit_seller_data_fragment" >
+        <action
+            android:id="@+id/action_editSellerDataFragment_pop"
+            app:destination="@+id/vehicleSummaryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popUpTo="@id/editSellerDataFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

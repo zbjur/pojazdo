@@ -5,7 +5,6 @@ import com.pojazdo.architecture.ui.base.Command
 import com.pojazdo.architecture.ui.base.ViewModelBase
 
 import com.mobile.base.ApplicationScheduler
-import io.reactivex.functions.Consumer
 import javax.inject.Inject
 
 class VehicleScannerViewModel : ViewModelBase {
@@ -40,7 +39,7 @@ class VehicleScannerViewModel : ViewModelBase {
     }
 
     private fun showVehicleDecodedInfo(registerNumber: String, vin: String, registrationDate: String) {
-        viewState.postValue(Event(Command.ShowVehicleDecodedInfo(registerNumber, vin, registrationDate)))
+        viewState.postValue(Event(Command.NavigateToVehicleDecodedInfo(registerNumber, vin, registrationDate)))
     }
 
     private fun showVehicleResult(registerNumber: String, vin: String, registrationDate: String) {
@@ -48,7 +47,7 @@ class VehicleScannerViewModel : ViewModelBase {
     }
 
     fun onScanButtonClick() {
-        viewState.postValue(Event(Command.NavigateToScannerView()))
+        viewState.postValue(Event(Command.NavigateToScannerView))
     }
 
     fun setCarInputDataField() {

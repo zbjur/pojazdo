@@ -52,7 +52,7 @@ object VehicleDataFactory {
 
 
     *//*Car offer*//*
-    val price = "219900"
+    val vehiclePrice = "219900"
     val priceCurrency = "PLN"
     val url = "https://www.otomoto.pl/oferta/porsche-911-carrera-targa-3-6-boxer-320km-salon-pl-ID6BRkuy.html#2e83b13067"
 

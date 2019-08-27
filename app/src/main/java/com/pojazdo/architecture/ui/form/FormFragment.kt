@@ -87,7 +87,7 @@ class FormFragment : BaseFragment() {
                 is Command.NavigateToScannerView -> showScanner()
                 is Command.ShowProgress -> showProgressBar()
                 is Command.HideProgress -> hideProgressBar()
-                is Command.ShowVehicleDecodedInfo -> initDecodedVehicleInfoView(it)
+                is Command.NavigateToVehicleDecodedInfo -> initDecodedVehicleInfoView(it)
                 is Command.NavigateToVehicleResultView -> showVehicleResultView(it.registrationNumber, it.vin, it.firstRegistrationDate)
                 is Command.Error -> showErrorView(it.errorMessage)
             }
@@ -106,7 +106,7 @@ class FormFragment : BaseFragment() {
 
     private fun showProgressBar() {}
 
-    private fun initDecodedVehicleInfoView(it: Command.ShowVehicleDecodedInfo) {
+    private fun initDecodedVehicleInfoView(it: Command.NavigateToVehicleDecodedInfo) {
         registerNumber.setText(it?.registrationNumber)
         registerDate.setText(it?.firstRegistrationDate)
         vinNumber.setText(it?.vin)
@@ -116,7 +116,7 @@ class FormFragment : BaseFragment() {
         navigator.openScanner(this)
     }
 
-    override fun onAttach(context: Context) {
+    override fun onAttach(context: Context?) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context

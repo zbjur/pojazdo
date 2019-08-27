@@ -17,19 +17,27 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder
 
-class VehicleSummaryInformationAdapter(private val ctx: Context, groups: MutableList<VehicleSections>?) : MultiTypeExpandableRecyclerViewAdapter<GroupViewHolder, ChildViewHolder>(groups) {
+class VehicleSummaryInformationAdapter constructor(private val context: Context, private var groupList: MutableList<VehicleSections>?, private val editSellerListener: VehiclePersonalDataGroupHolder.EditSellerListener) : MultiTypeExpandableRecyclerViewAdapter<GroupViewHolder, ChildViewHolder>(groupList) {
+
+
+    fun setPersonalData(vehicleInformationList: MutableList<VehicleSections>) {
+        groupList?.clear()
+       // groupList = vehicleInformationList
+        groupList?.addAll(vehicleInformationList)
+      //  notifyDataSetChanged()
+    }
+
     override fun onExpandSelectedGroup(groupType: ExpandableGroup<*>?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     companion object {
-
         /*GROUP'S VIEW TYPES*/
         private const val VEHICLE_REGULAR_GROUP_VIEW_TYPE = 2
         private const val VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE = 3
         private const val VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE = 11
-        private const val VEHICLE_MAP_VIEW_TYPE = 12
 
+        private const val VEHICLE_MAP_VIEW_TYPE = 12
         /*CHILD'S VIEW TYPES*/
         private const val VEHICLE_DETAILS_VIEW_TYPE = 4
         private const val VEHICLE_TIME_LINE_VIEW_TYPE = 5
@@ -40,6 +48,7 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
         private const val VEHICLE_AD_VIEW_TYPE = 10
         private const val VEHICLE_PRICE_OPTION_VIEW_TYPE = 11
         private const val VEHICLE_PERSONAL_DATA_CHILD_VIEW_TYPE = 14
+
     }
 
     private val viewPool = androidx.recyclerview.widget.RecyclerView.RecycledViewPool()
@@ -64,7 +73,11 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
             VEHICLE_SUMMARY_INFO_GROUP_VIEW_TYPE ->
                 (holder as VehicleSummaryInfoHolder).setVehicleSummaryInfo(group as VehicleSummaryInfoSections)
             VEHICLE_PERSONAL_DATA_GROUP_VIEW_TYPE ->
-                (holder as VehiclePersonalDataGroupHolder).setPersonalData(group as VehiclePersonalDataSection)
+                (holder as VehiclePersonalDataGroupHolder).apply {
+                    setPersonalData(group as VehiclePersonalDataSection)
+                    setOnEditSellerListener(editSellerListener)
+                }
+
             VEHICLE_MAP_VIEW_TYPE ->
                 (holder as VehicleMapHolder).setLocation(group as VehicleMapSection)
             else -> {
@@ -120,7 +133,7 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
             VEHICLE_AD_VIEW_TYPE -> {
                 (holder as VehicleAdOptionsHolder).valueTitle?.text = "Simple text"
                 holder.recycleView?.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(holder.recycleView?.context, LinearLayout.HORIZONTAL, false)
-                holder.recycleView?.adapter = VehicleAdsAdapter(ctx, (vehicleSubsection.subsection as VehicleAdSubSection).vehicleAds)
+                holder.recycleView?.adapter = VehicleAdsAdapter(context, (vehicleSubsection.subsection as VehicleAdSubSection).vehicleAds)
                 holder.recycleView?.setRecycledViewPool(viewPool)
 
             }
@@ -174,4 +187,6 @@ class VehicleSummaryInformationAdapter(private val ctx: Context, groups: Mutable
                 viewType == VEHICLE_TIME_LINE_VIEW_TYPE ||
                 viewType == VEHICLE_PERSONAL_DATA_CHILD_VIEW_TYPE
     }
+
+
 }

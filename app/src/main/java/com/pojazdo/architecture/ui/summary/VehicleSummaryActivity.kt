@@ -3,16 +3,14 @@ package com.pojazdo.architecture.ui.summary
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.pojazdo.architecture.R
 import com.pojazdo.architecture.extension.viewModelProvider
+import com.pojazdo.architecture.ui.Event
 import com.pojazdo.architecture.ui.base.Command
 import com.pojazdo.architecture.ui.platform.BaseActivity
-import com.pojazdo.architecture.ui.summary.list.VehicleSummaryInformationAdapter
-import com.pojazdo.architecture.ui.summary.model.modelsection.VehicleSections
-import kotlinx.android.synthetic.main.activity_vehicle_summary.*
+import com.pojazdo.architecture.ui.platform.util.FragmentUtils
+import com.pojazdo.architecture.ui.summary.editseller.EditSellerDataFragment
 import javax.inject.Inject
 
 class VehicleSummaryActivity : BaseActivity() {
@@ -28,32 +26,20 @@ class VehicleSummaryActivity : BaseActivity() {
                 .putExtra(VIN, vin)
     }
 
-    lateinit var vehicleSummaryInformationAdapter: VehicleSummaryInformationAdapter
-
     @Inject
     lateinit var vehicleInformationViewModel: VehicleInformationViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vehicle_summary)
         appComponent.inject(this)
         vehicleInformationViewModel = viewModelProvider(viewModelFactory)
-        vehicleInformationViewModel = ViewModelProviders.of(this).get(VehicleInformationViewModel::class.java)
         initObservers()
-        readVehicleData(intent, savedInstanceState)
-
-        val layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
-        recycler_view.layoutManager = layoutManager
+        FragmentUtils.addFragment(this, VehicleSummaryFragment.newInstance(), R.id.fragment_container, true)
     }
 
     override fun layoutId() = R.layout.activity_vehicle_summary
-
-    private fun readVehicleData(intent: Intent?, savedInstanceState: Bundle?) {
-        if (savedInstanceState == null) {
-            checkVehicle(intent)
-            vehicleInformationViewModel.checkVehicleInformation("TTSTSYSYSYSY", "SCI 555", "2011.09.09")
-        }
-    }
 
     private fun initObservers() {
         vehicleInformationViewModel.viewState.observe(this, Observer {
@@ -61,34 +47,31 @@ class VehicleSummaryActivity : BaseActivity() {
         })
     }
 
-    private fun renderViewState(it: com.pojazdo.architecture.ui.Event<Command>?) {
+    private fun renderViewState(it: Event<Command>?) {
+        it?.hasBeenHandled
         it?.getContentIfNotHandled()?.let {
             when (it) {
-                is Command.ShowVehicleInfo -> showVehicleInformation(it.vehicleInformationList)
-                is Command.ShowProgress -> showProgressBar()
-                is Command.HideProgress -> hideProgressBar()
-                is Command.Error -> showErrorView(it.errorMessage)
+                is Command.NavigateToEditPersonalSellerDataScreenEvent -> showEditSellerPersonalDataView()
+                is Command.NavigateToVehicleSummaryInfoScreenEvent -> handleBackPressedInCurrentFragment()
             }
         }
     }
 
-    private fun showVehicleInformation(vehicleInformationList: MutableList<VehicleSections>?) {
-        vehicleSummaryInformationAdapter = VehicleSummaryInformationAdapter(this, vehicleInformationList)
-        recycler_view.adapter = vehicleSummaryInformationAdapter
+    private fun showEditSellerPersonalDataView() {
+        FragmentUtils.replaceFragment(this, EditSellerDataFragment.newInstance(), R.id.fragment_container, true)
     }
 
-    private fun hideProgressBar() {}
-
-    private fun showProgressBar() {}
-
-    private fun showErrorView(errorMessage: String?) {
-        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+    override fun onBackPressed() {
+        handleBackPressedInCurrentFragment()
     }
 
-
-    private fun checkVehicle(intent: Intent?) {
-        intent?.getStringExtra(REGISTER_NUMBER)
-        intent?.getStringExtra(VIN)
-        intent?.getStringExtra(REGISTRATION_DATE)
+    private fun handleBackPressedInCurrentFragment() {
+        super.onBackPressed()
+/*        val baseFragment = FragmentUtils.getFragmentById(this, R.sellerId.fragment_container)
+        if (baseFragment != null && baseFragment is VehicleSummaryFragment) {
+            finish()
+        } else {
+            super.onBackPressed()
+        }*/
     }
 }
