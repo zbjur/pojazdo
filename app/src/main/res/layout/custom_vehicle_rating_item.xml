@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <TextView
+        android:id="@+id/vehicle_rating_type_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintEnd_toStartOf="@+id/vehicle_rating_points"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Wrażenia dsdads   sdsdsd sdsdsd sdsds dsdsddsds sdsds dsdsd " />
+
+    <com.skydoves.progressview.ProgressView
+        android:id="@+id/vehicle_rating_bar"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_rating_type_text"
+        app:progressView_colorBackground="@color/white"
+        app:progressView_colorGradientEnd="@color/yellow"
+        app:progressView_highlightAlpha="0.8"
+        app:progressView_highlightColor="@color/poajzdo_green"
+        app:progressView_highlightWidth="1dp"
+        app:progressView_labelColorInner="@color/white"
+        app:progressView_labelColorOuter="@color/black"
+        app:progressView_autoAnimate="false"
+        app:progressView_labelSize="13sp"
+        app:progressView_labelSpace="10dp"
+        app:progressView_orientation="horizontal"
+        app:progressView_padding="1dp"
+        app:progressView_progress="70" />
+
+    <TextView
+        android:id="@+id/vehicle_rating_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="7.8"
+        android:textAppearance="?attr/textAppearanceListItem"
+        app:layout_constraintBottom_toTopOf="@+id/vehicle_rating_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="4,6" />
+
+</merge>

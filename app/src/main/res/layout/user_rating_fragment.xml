@@ -1,0 +1,289 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+
+        <include
+            android:id="@+id/user_rating_container"
+            layout="@layout/overall_rating_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></include>
+
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_engine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.86"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:ratingHeaderText="Silnik">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_gear_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/ranting_engine"
+            app:ratingHeaderText="Skrzynia biegów">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/ranting_chassis"
+            app:ratingHeaderText="Karoseria">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_chassis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ranting_engine"
+            app:ratingHeaderText="Układ jezdny">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_visibility"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ranting_ventilation_heating"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:ratingHeaderText="Widoczność">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_ergonomics"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ranting_visibility"
+            app:ratingHeaderText="Ergonomia">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_ventilation_heating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:ratingHeaderText="Wentylacja i ogrzewanie">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_mute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/ranting_ergonomics"
+            app:ratingHeaderText="Wyciszenie">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/ranting_driver_and_passengers_space"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ranting_ergonomics"
+            app:ratingHeaderText="Przestrzeń dla kierowcy i pasażerów">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/maintenance_costs_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/quality_price_ratio_rating"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:ratingHeaderText="Koszty utrzymania">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/quality_price_ratio_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/maintenance_costs_rating"
+            app:layout_constraintTop_toBottomOf="@+id/economy_rating_header"
+            app:ratingHeaderText="Stosunek jakość/cena">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/minor_defects_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reliability_rating_header"
+            app:ratingHeaderText="Drobne usterki">
+
+        </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+        <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+            android:id="@+id/serious_faults_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/minor_defects_rating"
+            app:ratingHeaderText="Poważne usterki" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Wrażenia"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating_container" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Komfort"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ranting_chassis" />
+
+        <TextView
+            android:id="@+id/economy_rating_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Ekonomiczność"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ranting_driver_and_passengers_space" />
+
+        <TextView
+            android:id="@+id/reliability_rating_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Niezawodność"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/maintenance_costs_rating" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

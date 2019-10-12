@@ -25,8 +25,12 @@ public abstract class GroupViewHolder extends RecyclerView.ViewHolder implements
   @Override
   public void onClick(View v) {
     if (listener != null) {
-     listener.onGroupClick(getAdapterPosition());
+      onGroupClick();
     }
+  }
+
+  public void onGroupClick() {
+    listener.onGroupClick(getAdapterPosition());
   }
 
   public void setOnGroupClickListener(OnGroupClickListener listener) {

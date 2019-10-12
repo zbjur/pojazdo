@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.79" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="86dp" />
+
+    <FrameLayout
+        android:id="@+id/user_rating_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rate_number_shape"
+        app:layout_constraintBottom_toTopOf="@+id/user_comments"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/average_vehicle_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="5.7"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/commenting_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Janusz Pasikonik"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/user_comments"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_vehicle_model"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text=" dsdsdsddddddddddddddddddddddddddddd sssssssssss sss            sssssss ssss ssss sss ssss ssss sss"
+        android:textColor="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/user_comments"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/user_comments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Dostałem auto jako firmowe po szefie. On jeżdził od nowości i zrobił nim 140 tyś km. Ja od 2016 roku dołożyłem 150 tyś km. Eksploatuje go mocno po mieście i w trasie. I co? I NIC. Auto jeździ, wymieniam w serwisie olej i rzeczy eksploatacyjne i tyle. W firmie są dwa modele 90 KM i dwa 105 KM. Żaden nigdy się nie zepsuł. 105 konne są starsze i model jakim jeździ kolega przekroczył 300 tyś km. Wtedy serwis wymienił w nim sprzęgło. Tyle z akcji naprawczych. Turba są oryginalne, wtryski też. Olej lejemy Shella 5w30 co 15 - 20 tyś km. Filtry paliwa i powietrza co drugą wymianę oleju. Rozrządy we wszystkich wymienione po 210 tyś km. Szef się cieszy, że flota w końcu trafiona bo nie trzeba pchać kasy jak w poprzednie Fordy Focusy i BMW 3. Polecam ten model Golfa."
+        android:textColor="@color/secondary_text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

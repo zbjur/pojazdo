@@ -84,5 +84,8 @@ dependencies {
     implementation project(':testcommons')
     implementation testDependencies.guava
     implementation 'androidx.room:room-runtime:2.1.0'
+    // https://mvnrepository.com/artifact/androidx.room/room-rxjava2
+    compile group: 'androidx.room', name: 'room-rxjava2', version: '2.1.0'
+
     kapt 'androidx.room:room-compiler:2.1.0'
 }
