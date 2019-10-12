@@ -3,7 +3,7 @@ import com.google.gson.annotations.SerializedName
 
 data class VehicleOffers (
 
-		@SerializedName("price") val price : String,
+		@SerializedName("vehiclePrice") val price : String,
 		@SerializedName("priceCurrency") val priceCurrency : String,
 		@SerializedName("htmlUrl") val htmlUrl : String,
 		@SerializedName("imgaeUrl") val imgaeUrl : String,

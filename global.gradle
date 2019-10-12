@@ -18,14 +18,14 @@ ext {
     support_library_version = '28.0.0'
     mutlidex_version = '1.0.3'
     constraint_version = '2.0.0-beta1'
-    play_services_cast_version = '15.0.1'
-    play_services_location_version = '15.0.1'
+    play_services_cast_version = '17.0.0'
+    play_services_location_version = '17.0.0'
     play_billing_version = '1.1'
-    firebase_core_version = '16.0.3'
-    firebase_config_version = '16.0.0'
+    firebase_core_version = '17.0.0'
+    firebase_config_version = '17.0.0'
     firebase_messaging_version = '17.0.0'
-    firebase_perf_version = '16.1.0'
-    firebase_analytics_version = '16.0.3'
+    firebase_perf_version = '17.0.0'
+    firebase_analytics_version = '17.0.0'
     rx_java_version = '2.1.12'
     rx_android_version = '2.0.2'
     rx_kotlin_version = '2.2.0'
@@ -60,8 +60,8 @@ ext {
     robolectric_version = '3.2.2'
     robolectric_unmock4_version = '4.3_r2-robolectric-0'
     robolectric_unmock6_version = '6.0.0_r1-robolectric-0'
-    mockito_version = '2.17.0'
-    mockito_kotlin_version = '1.5.0'
+    mockito_version = '2.8.47'
+    mockito_kotlin_version = '2.1.0'
     assertJ_version = '2.9.0'
     wiremock_version = '2.17.0'
     mockwebserver_version = '3.14.0'
@@ -152,7 +152,7 @@ ext {
             robolectricUnmock6    : "org.robolectric:android-all:$robolectric_unmock6_version",
             mockito               : "org.mockito:mockito-core:$mockito_version",
             mockitoInline         : "org.mockito:mockito-inline:$mockito_version",
-            mockitoKotlin         : "com.nhaarman:mockito-kotlin-kt1.1:$mockito_kotlin_version",
+            mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version",
             assertJ               : "org.assertj:assertj-core:$assertJ_version",
             wiremock              : "com.github.tomakehurst:wiremock:$wiremock_version",
             mockwebserver         : "com.squareup.okhttp3:mockwebserver:$mockwebserver_version",

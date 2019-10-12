@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vehicleSummaryFragment">
+
+    <fragment
+        android:id="@+id/vehicleSummaryFragment"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.fragments.VehicleSummaryFragment"
+        android:label="VehicleSummaryFragment">
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_editSellerDataFragment"
+            app:destination="@id/editSellerDataFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_vehicleLocationActivity"
+            app:destination="@id/vehicleLocationActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_userCommentsFragment"
+            app:destination="@id/userCommentsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_vehicleSaleOfferFragment"
+            app:destination="@id/vehicleSaleOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_vehicleDetailsFragment"
+            app:destination="@id/vehicleDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_vehicleSummaryFragment_to_userRatingFragment"
+            app:destination="@id/userRatingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_vehicleSummaryFragment"
+        app:destination="@id/vehicleSummaryFragment" />
+    <fragment
+        android:id="@+id/editSellerDataFragment"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.editseller.EditSellerDataFragment"
+        android:label="edit_seller_data_fragment"
+        tools:layout="@layout/edit_seller_data_fragment">
+        <action
+            android:id="@+id/action_editSellerDataFragment_pop"
+            app:destination="@+id/vehicleSummaryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popUpTo="@id/editSellerDataFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_vehicleSummaryFragment2"
+        app:destination="@id/vehicleSummaryFragment" />
+    <activity
+        android:id="@+id/vehicleLocationActivity"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.fragments.VehicleLocationActivity"
+        android:label="activity_vehicle_location_map"
+        tools:layout="@layout/activity_vehicle_location_map" />
+    <fragment
+        android:id="@+id/vehicleSaleOfferFragment"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.fragments.VehicleSalesOfferFragment"
+        android:label="vehicle_sale_offer_fragment"
+        tools:layout="@layout/vehicle_sale_offer_fragment" />
+    <fragment
+        android:id="@+id/userCommentsFragment"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.fragments.UserCommentsFragment"
+        android:label="user_comments_fragment"
+        tools:layout="@layout/user_comments_fragment" />
+    <fragment
+        android:id="@+id/vehicleDetailsFragment"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.fragments.VehicleDetailsFragment"
+        android:label="VehicleDetailsFragment" />
+    <fragment
+        android:id="@+id/userRatingFragment"
+        android:name="com.pojazdo.mobile.ui.vehiclesummary.fragments.UserRatingFragment"
+        android:label="UserRatingFragment" />
+</navigation>

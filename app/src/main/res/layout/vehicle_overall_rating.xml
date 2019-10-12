@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/average_vehicle_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
 
-    <TextView
+
+
+<!--    <TextView
         android:id="@+id/overall_vehicle_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +29,82 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textAppearance="?attr/textAppearanceListItem" />-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
 
-</LinearLayout>
+    <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+        android:id="@+id/ranting_engine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_rating_container"
+        app:ratingHeaderText="Silnik">
+
+    </com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+    <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+        android:id="@+id/ranting_gear_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ranting_engine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/user_rating_container"
+        app:ratingHeaderText="Skrzynia biegów"></com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+
+    <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+        android:id="@+id/ranting_body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/ranting_gear_box"
+        app:layout_constraintVertical_bias="0.0"
+        app:ratingHeaderText="Karoseria"></com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+    <com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView
+        android:id="@+id/ranting_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ranting_engine"
+        app:ratingHeaderText="Układ jezdny"></com.pojazdo.mobile.ui.vehiclesummary.rating.view.PojazdoProgressView>
+
+    <include
+        android:id="@+id/user_rating_container"
+        layout="@layout/overall_rating_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
